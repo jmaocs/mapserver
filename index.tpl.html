@@ -1,0 +1,433 @@
+<html>
+
+<head>
+      <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="/content.css">
+	  <script src="http://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluu8210tl9%2C2n%3Do5-94r5qa"></script>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	  <script type="text/javascript">
+	  var route;
+	  </script>
+
+
+
+	  <style type="text/css">
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+	#header {
+    background-color:black;
+	height:70px;
+	width:98.7%;
+    color:white;
+    text-align:center;
+    padding:5px;
+	}
+	#nav {
+		line-height:30px;
+		background-color:white;
+		height:650px;
+		width:23%;
+		float:left;
+		padding:5px;
+		font-family:verdana;
+		font-size:70%;
+		text-align:center;
+	}
+	#section1 {
+		width:75%;
+		height:650px;
+		float:left;
+		padding:10px;
+	}
+	#section2 {
+		width:84%;
+		float:left;
+		padding:10px;
+	}
+	#footer {
+		background-color:black;
+		height:5px;
+		color:white;
+		clear:both;
+		text-align:center;
+	    padding:5px;
+	}
+	hr {
+		width: 100%;
+		height: 8px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color:black;
+		color:black;
+		border: 0 none;
+		}
+	.searchbox {
+	    width: 330px;
+		border: 1px dotted #000000;
+		outline:0;
+		text-align:center;
+		 padding:6px 10px;
+		 border:solid 1px #00CC33;
+		 -webkit-border-radius:4px;
+		 -moz-border-radius:4px;
+		 border-radius: 4px;
+		 font:13px Arial, Helvetica, sans-serif;
+		 font-weight:bold;
+		 color:#000000;
+		 background-color:#00CC33;
+		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
+		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+	  }
+	  .searchbox1 {
+	    width: 330px;
+		border: 1px dotted #000000;
+		outline:0;
+		text-align:center;
+		 padding:6px 10px;
+		 border:solid 1px #FF0000;
+		 -webkit-border-radius:4px;
+		 -moz-border-radius:4px;
+		 border-radius: 4px;
+		 font:13px Arial, Helvetica, sans-serif;
+		 font-weight:bold;
+		 color:#000000;
+		 background-color:#FF0000;
+		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
+		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+	  }
+	  .searchbox2 {
+	    width: 330px;
+		border: 1px dotted #000000;
+		outline:0;
+		text-align:center;
+		 padding:6px 10px;
+		 border:solid 1px #00CC33;
+		 -webkit-border-radius:4px;
+		 -moz-border-radius:4px;
+		 border-radius: 4px;
+		 font:13px Arial, Helvetica, sans-serif;
+		 font-weight:bold;
+		 color:#000000;
+		 background-color:#00CC33;
+		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
+		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
+		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
+		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+	  }
+   .button1{text-decoration:none;
+	text-align:center;
+     padding:6px 10px;
+	 border:solid 1px #004F72;
+	 -webkit-border-radius:4px;
+	 -moz-border-radius:4px;
+	 border-radius: 4px;
+	 font:12px Arial, Helvetica, sans-serif;
+	 font-weight:bold;
+	 color:#FFFFFF;
+	 background-color:#000066;
+	 background-image: -moz-linear-gradient(top, #000066 0%, #000066 100%);
+	 background-image: -webkit-linear-gradient(top, #000066 0%, #000066 100%);
+	 background-image: -o-linear-gradient(top, #000066 0%, #000066 100%);
+	 background-image: -ms-linear-gradient(top, #000066 0% ,#000066 100%);
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000066', endColorstr='#000066',GradientType=0 );
+	 background-image: linear-gradient(top, #000066 0% ,#000066 100%);
+	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+	  }
+	  .button2{text-decoration:none;
+	text-align:center;
+     padding:6px 10px;
+	 border:solid 1px #003300;
+	 -webkit-border-radius:4px;
+	 -moz-border-radius:4px;
+	 border-radius: 4px;
+	 font:12px Arial, Helvetica, sans-serif;
+	 font-weight:bold;
+	 color:#FFFFFF;
+	 background-color:#00CC33;
+	 background-image: -moz-linear-gradient(top, #00CC33 0%, #00CC33 100%);
+	 background-image: -webkit-linear-gradient(top, #00CC33 0%, #00CC33 100%);
+	 background-image: -o-linear-gradient(top, #00CC33 0%, #00CC33 100%);
+	 background-image: -ms-linear-gradient(top, #00CC33 0% ,#00CC33 100%);
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00CC33', endColorstr='#00CC33',GradientType=0 );
+	 background-image: linear-gradient(top, #00CC33 0% ,#00CC33 100%);
+	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+	  }
+    #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+	text-align:left;
+	}
+
+	#customers td, #customers th {
+		border: 2px solid #0E40B5;
+		padding: 3px 7px 2px 7px;
+		text-align:left;
+		 -webkit-border-radius:4px;
+		 -moz-border-radius:4px;
+		 border-radius: 4px;
+		 font:12px Arial, Helvetica, sans-serif;
+		 font-weight:bold;
+	}
+
+	#customers th {
+		text-align: left;
+		padding-top: 5px;
+		padding-bottom: 4px;
+		background-color: #0E40B5;
+		color: #ffffff;
+		text-align:center;
+		border: 2px solid #E6E6F0;
+		-webkit-border-radius:4px;
+		 -moz-border-radius:4px;
+		 border-radius: 4px;
+		 font:12px Arial, Helvetica, sans-serif;
+		 font-weight:bold;
+	}
+
+	#customers tr.alt td {
+		color: #000000;
+		background-color: #E6E6F0;
+		text-align:left;
+	}
+  </style>
+
+
+
+
+</head>
+
+<body >
+<?php
+?>
+<div id="header">
+<h1>SEM Group Project</h1>
+</div>
+<div id="nav">
+<div id="D1">
+			<form id="myform1" name="myform1">
+			</br>
+			<img src="scripts/C.png" id="img" align="left" alt="loc" style="width:18px;height:23px">&#160;
+			<b><input class="searchbox" style="text-align: left;" id="address" type="text" size="6" autofocus></b>
+			</br></br>
+			<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<a href="#" onclick="codeAddress();" class="button2"/>SEARCH</a>
+			</form>
+</div>
+<div id="D2" style="display: none">
+			<form id="myform2" name="myform2">
+			</br>
+			<img src="scripts/A.png" id="img1" align="left" alt="Source" style="width:18px;height:29px">&#160;
+			<b><input class="searchbox1" style="text-align: left;" id="address1" type="text" size="6" ></b>
+			</br></br>
+			<img src="scripts/B.png" id="img2" align="left" alt="Destination" style="width:17px;height:28px">&#160;
+			<b><input class="searchbox2" style="text-align: left;" id="address2" type="text" size="6" ></b>
+			</br></br>
+			<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
+			</br></br>
+			<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
+			</form>
+</div>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places&language=en-AU"></script>
+        <script>
+		 var autocomplete = new google.maps.places.Autocomplete($("#address")[0], {});
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                console.log(place.address_components);
+            });
+			    var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                console.log(place.address_components);
+            });
+			    var autocomplete = new google.maps.places.Autocomplete($("#address2")[0], {});
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                console.log(place.address_components);
+            });
+        </script>
+</div>
+<div id="section1">
+<div id="map"></div>
+ <script type="text/javascript">
+            // An example of using the MQA.EventUtil to hook into the window load event and execute the defined
+            // function passed in as the last parameter. You could alternatively create a plain function here and
+            // have it executed whenever you like (e.g. <body onload="yourfunction">).
+
+                MQA.EventUtil.observe(window, 'load', function() {
+
+                // create an object for options
+                var options = {
+                    elt: document.getElementById('map'),             // ID of map element on page
+                    zoom: 14,                                        // initial zoom level of the map
+                    latLng: { lat: 41.1536111, lng: -81.3580556 },     // center of map in latitude/longitude
+					//mtype:'osm'
+                };
+
+                // construct an instance of MQA.TileMap with the options object
+                window.map = new MQA.TileMap(options);
+
+                // download the modules
+
+				  MQA.withModule('largezoom', 'viewoptions', 'traffictoggle', 'mousewheel', 'directions','dotcomwindowmanager', 'remotecollection', 'georssdeserializer', function() {
+				  map.addControl(new MQA.LargeZoom(), new MQA.MapCornerPlacement(MQA.MapCorner.TOP_LEFT, new MQA.Size(5,5)));
+				  map.addControl(new MQA.ViewOptions());
+				  map.enableMouseWheelZoom();
+
+				  // create a remote collection
+                    var photos = new MQA.RemoteCollection('/content/documentation/common/data/pictures.rss', new MQA.GeoRSSDeserializer());
+
+                    // set a custom name for the collection
+                    photos.collectionName = 'photos';
+
+                    // automatically zoom and center the map using the bestFit method after the collection has loaded
+                    MQA.EventManager.addListener(photos, 'loaded', function() {
+                        map.bestFit();
+                    });
+
+                    // add the shape collection to the map
+                    map.addShapeCollection(photos);
+
+                    // pan the map to make the InfoWindow visible
+                    map.windowManager.autoPanToView = true;
+				});
+            });
+
+	  </script>
+	<script type="text/javascript">
+	function codeAddress() {
+    var address = document.getElementById("address").value;
+    MQA.withModule('geocoder', function() {
+    // executes a geocode and adds the result to the map
+    map.geocodeAndAddLocations(address);
+    });
+	}
+	function direction() {
+		    var start = document.getElementById("address1").value;
+			var end = document.getElementById("address2").value;
+
+			// download the modules
+                MQA.withModule('new-route', function() {
+
+                    route = {
+                        request: {
+                            locations: [ start, end ],
+
+                            options: {
+                                avoids: [],
+                                avoidTimedConditions: false,
+                                doReverseGeocode: true,
+                                shapeFormat: 'raw',
+                                generalize: 0,
+                                routeType: 'fastest',
+                                timeType: 1,
+                                locale: 'en_US',
+                                unit: 'm',
+                                enhancedNarrative: false,
+                                drivingStyle: 2,
+                                highwayEfficiency: 21.0
+                            }
+                        },
+
+                        display: {
+                            color: '#0000FF',
+                            borderWidth: 7,
+                        },
+
+                        // on success, display the route narrative
+                        success: function displayNarrative(data) {
+                            if (data.route) {
+                                var legs = data.route.legs,
+                                    html = '',
+                                    i = 0,
+                                    j = 0,
+                                    trek,
+                                    maneuver;
+
+                                html += '<table id="customers"><tbody>';
+
+                                for (; i<legs.length; i++) {
+                                    for (j=0; j<legs[i].maneuvers.length; j++) {
+                                        maneuver = legs[i].maneuvers[j];
+                                        html += '<tr>';
+                                        html += '<td>';
+
+                                        if (maneuver.iconUrl) {
+                                            html += '<img src="' + maneuver.iconUrl + '" />  ';
+                                        }
+
+                                        for (k=0; k<maneuver.signs.length; k++) {
+                                            var sign = maneuver.signs[k];
+
+                                            if (sign && sign.url) {
+                                                html += '<img src="' + sign.url + '" />  ';
+                                            }
+                                        }
+
+                                        //html += maneuver.narrative + '</br>';
+										html += '</td><td>' + maneuver.narrative + '</td>';
+                                        html += '</tr>';
+                                    }
+                                }
+
+                                html += '</tbody></table>';
+                                document.getElementById('route-results').innerHTML = html;
+                            }
+                        }
+                    }
+
+                    map.addRoute(route);
+                });
+	}
+	function myFunction1() {
+     document.getElementById('D1').style.display = "none";
+	 document.getElementById('D2').style.display = "block";
+	 document.getElementById("myform2").reset();
+	 document.getElementById("address1").focus();
+	 document.getElementById("route-results").innerHTML = "";
+	 map.removeRoute(route);
+	}
+	function myFunction2() {
+     document.getElementById('D2').style.display = "none";
+	 document.getElementById('D1').style.display = "block";
+	 document.getElementById("myform1").reset();
+	 document.getElementById("address").focus();
+	  map.removeRoute(route);
+	}
+ </script>
+</div>
+</body>
+</html>
