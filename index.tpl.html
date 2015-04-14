@@ -1,433 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-
-<head>
-      <link rel="stylesheet" href="/style.css">
-      <link rel="stylesheet" href="/content.css">
-	  <script src="http://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluu8210tl9%2C2n%3Do5-94r5qa"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	  <script type="text/javascript">
-	  var route;
-	  </script>
-
-
-
-	  <style type="text/css">
-    #map {
-      width: 100%;
-      height: 100%;
-    }
-	#header {
-    background-color:black;
-	height:70px;
-	width:98.7%;
-    color:white;
-    text-align:center;
-    padding:5px;
-	}
-	#nav {
-		line-height:30px;
-		background-color:white;
-		height:650px;
-		width:23%;
-		float:left;
-		padding:5px;
-		font-family:verdana;
-		font-size:70%;
-		text-align:center;
-	}
-	#section1 {
-		width:75%;
-		height:650px;
-		float:left;
-		padding:10px;
-	}
-	#section2 {
-		width:84%;
-		float:left;
-		padding:10px;
-	}
-	#footer {
-		background-color:black;
-		height:5px;
-		color:white;
-		clear:both;
-		text-align:center;
-	    padding:5px;
-	}
-	hr {
-		width: 100%;
-		height: 8px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color:black;
-		color:black;
-		border: 0 none;
+	<head>
+		<title>Kent City</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="/ie/html5shiv.js"></script><![endif]-->
+		<script src="/jquery.min.js"></script>
+		<script src="/jquery.dropotron.min.js"></script>
+		<script src="/skel.min.js"></script>
+		<script src="/skel-layers.min.js"></script>
+		<script src="/init.js"></script>
+		<!-- Start WOWSlider.com HEAD section -->
+		<link rel="stylesheet" type="text/css" href="/engine1/style.css" />
+		<script type="text/javascript" src="/engine1/jquery.js"></script>
+		<!-- End WOWSlider.com HEAD section -->
+		
+		<noscript>
+			<link rel="stylesheet" href="/skel.css" />
+			<link rel="stylesheet" href="/style.css" />
+		</noscript>
+		<style>
+		.font-style {
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color: #5A6369;
+			font-size: 18px;
+			padding: 0;
+			text-shadow: 1px 1px 0px #A1A1A1;
 		}
-	.searchbox {
-	    width: 330px;
-		border: 1px dotted #000000;
-		outline:0;
-		text-align:center;
-		 padding:6px 10px;
-		 border:solid 1px #00CC33;
-		 -webkit-border-radius:4px;
-		 -moz-border-radius:4px;
-		 border-radius: 4px;
-		 font:13px Arial, Helvetica, sans-serif;
-		 font-weight:bold;
-		 color:#000000;
-		 background-color:#00CC33;
-		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
-		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
-		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-	  }
-	  .searchbox1 {
-	    width: 330px;
-		border: 1px dotted #000000;
-		outline:0;
-		text-align:center;
-		 padding:6px 10px;
-		 border:solid 1px #FF0000;
-		 -webkit-border-radius:4px;
-		 -moz-border-radius:4px;
-		 border-radius: 4px;
-		 font:13px Arial, Helvetica, sans-serif;
-		 font-weight:bold;
-		 color:#000000;
-		 background-color:#FF0000;
-		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
-		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
-		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-	  }
-	  .searchbox2 {
-	    width: 330px;
-		border: 1px dotted #000000;
-		outline:0;
-		text-align:center;
-		 padding:6px 10px;
-		 border:solid 1px #00CC33;
-		 -webkit-border-radius:4px;
-		 -moz-border-radius:4px;
-		 border-radius: 4px;
-		 font:13px Arial, Helvetica, sans-serif;
-		 font-weight:bold;
-		 color:#000000;
-		 background-color:#00CC33;
-		 background-image: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -o-linear-gradient(top, #FFFFFF 0%, #FFFFFF 100%);
-		 background-image: -ms-linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
-		 background-image: linear-gradient(top, #FFFFFF 0% ,#FFFFFF 100%);
-		 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-		 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
-		 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-	  }
-   .button1{text-decoration:none;
-	text-align:center;
-     padding:6px 10px;
-	 border:solid 1px #004F72;
-	 -webkit-border-radius:4px;
-	 -moz-border-radius:4px;
-	 border-radius: 4px;
-	 font:12px Arial, Helvetica, sans-serif;
-	 font-weight:bold;
-	 color:#FFFFFF;
-	 background-color:#000066;
-	 background-image: -moz-linear-gradient(top, #000066 0%, #000066 100%);
-	 background-image: -webkit-linear-gradient(top, #000066 0%, #000066 100%);
-	 background-image: -o-linear-gradient(top, #000066 0%, #000066 100%);
-	 background-image: -ms-linear-gradient(top, #000066 0% ,#000066 100%);
-	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000066', endColorstr='#000066',GradientType=0 );
-	 background-image: linear-gradient(top, #000066 0% ,#000066 100%);
-	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
-	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+		.font-style2 {
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+			color: #2975C2;
+			font-size: 28px;
+			padding: 0;
+			text-shadow: -1px 1px 0px #A1A1A1;
+		}
+		
+		</style>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar" style="background-image: url("/bg.jpg");">
 
-	  }
-	  .button2{text-decoration:none;
-	text-align:center;
-     padding:6px 10px;
-	 border:solid 1px #003300;
-	 -webkit-border-radius:4px;
-	 -moz-border-radius:4px;
-	 border-radius: 4px;
-	 font:12px Arial, Helvetica, sans-serif;
-	 font-weight:bold;
-	 color:#FFFFFF;
-	 background-color:#00CC33;
-	 background-image: -moz-linear-gradient(top, #00CC33 0%, #00CC33 100%);
-	 background-image: -webkit-linear-gradient(top, #00CC33 0%, #00CC33 100%);
-	 background-image: -o-linear-gradient(top, #00CC33 0%, #00CC33 100%);
-	 background-image: -ms-linear-gradient(top, #00CC33 0% ,#00CC33 100%);
-	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00CC33', endColorstr='#00CC33',GradientType=0 );
-	 background-image: linear-gradient(top, #00CC33 0% ,#00CC33 100%);
-	 -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
-	 -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
-	 box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+		<!-- Header -->
+			<div id="header-wrapper" style="height:100%">
+				<div id="header" class="container">
 
-	  }
-    #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    width: 100%;
-    border-collapse: collapse;
-	text-align:left;
-	}
+					<!-- Logo -->
+						<h1 id="logo"><a href="/">Kent Explore</a></h1>
 
-	#customers td, #customers th {
-		border: 2px solid #0E40B5;
-		padding: 3px 7px 2px 7px;
-		text-align:left;
-		 -webkit-border-radius:4px;
-		 -moz-border-radius:4px;
-		 border-radius: 4px;
-		 font:12px Arial, Helvetica, sans-serif;
-		 font-weight:bold;
-	}
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/map">Map</a></li>
+								<li class="break"><a href="#">Interests</a></li>
+								<li><a href="aboutus">About Us</a></li>
+							</ul>
+						</nav>
 
-	#customers th {
-		text-align: left;
-		padding-top: 5px;
-		padding-bottom: 4px;
-		background-color: #0E40B5;
-		color: #ffffff;
-		text-align:center;
-		border: 2px solid #E6E6F0;
-		-webkit-border-radius:4px;
-		 -moz-border-radius:4px;
-		 border-radius: 4px;
-		 font:12px Arial, Helvetica, sans-serif;
-		 font-weight:bold;
-	}
+				</div>
+			</div>
 
-	#customers tr.alt td {
-		color: #000000;
-		background-color: #E6E6F0;
-		text-align:left;
-	}
-  </style>
+		<!-- Main -->
+			<div class="wrapper">
+				<div class="container" id="main" style="margin-top:-75px;">
 
+					<!-- Content -->
+						<!-- Start WOWSlider.com BODY section -->
+						<div id="wowslider-container1" style="width:100%;max-width:100%">
+						<div class="ws_images"><ul>
+								<li><img src="/data1/images/citykent.jpg" alt="citykent" title="City Of Kent" id="wows1_0"/></li>
+								<li><img src="/data1/images/downtown_1.jpg" alt="downtown_1" title="Downtown" id="wows1_1"/></li>
+								<li><img src="/data1/images/downtown_2.jpg" alt="downtown_2" title="Downtown" id="wows1_2"/></li>
+								<li><img src="/data1/images/ksu.jpg" alt="ksu" title="Kent State University" id="ksu"/></li>
+								<li><img src="/data1/images/library.jpg" alt="library" title="Kent Library" id="wows1_4"/></li>
+								<li><img src="/data1/images/park.jpg" alt="park" title="Beautiful Park" id="park"/></li>
+								<li><img src="/data1/images/squaral.jpg" alt="jquery carousel" title="Black Squaral" id="wows1_6"/></li>
+								<li><img src="/data1/images/stadium.jpg" alt="stadium" title="Stadium" id="wows1_7"/></li>
+							</ul></div>
+							<div class="ws_bullets"><div>
+								<a href="#" title="citykent"><span><img src="/data1/tooltips/citykent.jpg" alt="citykent"/>1</span></a>
+								<a href="#" title="downtown_1"><span><img src="/data1/tooltips/downtown_1.jpg" alt="downtown_1"/>2</span></a>
+								<a href="#" title="downtown_2"><span><img src="/data1/tooltips/downtown_2.jpg" alt="downtown_2"/>3</span></a>
+								<a href="#" title="ksu"><span><img src="/data1/tooltips/ksu.jpg" alt="ksu"/>4</span></a>
+								<a href="#" title="library"><span><img src="/data1/tooltips/library.jpg" alt="library"/>5</span></a>
+								<a href="#" title="park"><span><img src="/data1/tooltips/park.jpg" alt="park"/>6</span></a>
+								<a href="#" title="squaral"><span><img src="/data1/tooltips/squaral.jpg" alt="squaral"/>7</span></a>
+								<a href="#" title="stadium"><span><img src="/data1/tooltips/stadium.jpg" alt="stadium"/>8</span></a>
+							</div></div>
+						<div class="ws_shadow"></div>
+						</div>	
+						<script type="text/javascript" src="/engine1/wowslider.js"></script>
+						<script type="text/javascript" src="/engine1/script.js"></script>
+						<!-- End WOWSlider.com BODY section -->
+						<!--Welcome-->
+						<br>
+						<h1 align="center" class="font-style2" ><b style="color: #2975C2">Welcome To Kent</b></h1>
+						<p align="center" class="font-style">Here has beautiful scenery, friendly people, nice food and our famous cute black squirrel as symbolic animal. <br>You can explore Kent More from here:</p>
+					<!--First Row Feature-->
+					<div class="row features" style="margin-top:10px">
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper first">
+								<a href="map" class="image featured"><img src="/downtown.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>Downtown</h3>
+							</header>
+						</section>
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper">
+								<a href="map" class="image featured"><img src="/restaurant.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>Restaurants</h3>
+							</header>
+						</section>
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper">
+								<a href="map" class="image featured"><img src="/apartnment.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>Apartments</h3>
+							</header>
+						</section>
+					</div>
+					
+					<!--End of First Row Feature-->
+					<!--Second Row Feature-->
+					<div class="row features" >
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper first">
+								<a href="map" class="image featured"><img src="/sport.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>Sports</h3>
+							</header>
+						</section>
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper">
+								<a href="map" class="image featured"><img src="/ksu.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>KSU</h3>
+							</header>
+						</section>
+						<section class="4u 12u(narrower) feature">
+							<div class="image-wrapper">
+								<a href="map" class="image featured"><img src="/hotel.jpg" alt="" /></a>
+							</div>
+							<header style="margin-top:-50px;">
+								<h3>Hotel</h3>
+							</header>
+						</section>
+					</div>
+					<!--End of Second Row Feature-->
+				</div>
+			</div>
 
+		<!-- Footer -->
+			<div id="footer-wrapper" style="margin-top:-50px;">
+				<div id="footer" class="container" style="margin-top:-30px;">
+					
+						<h3>Upcoming Events</h3>
+						<br>
+						<table>
+						<tr>
+							<td>May 2</td>
+							<td><a href="map">Comic Book Day</a></td>
+						</tr>
+						<tr>
+							<td>May 5</td>
+							<td><a href="map">Music Together with Mr Jim.</a></td>
+						</tr>
+						<tr>
+							<td>May 8</td>
+							<td><a href="map">Kent State University graduate degrees commencement</a></td>
+						</tr>
+
+						</table>
+					
+					
+				</div>
+			
+			</div>
 
 
-</head>
 
-<body >
-<?php
-?>
-<div id="header">
-<h1>SEM Group Project</h1>
-</div>
-<div id="nav">
-<div id="D1">
-			<form id="myform1" name="myform1">
-			</br>
-			<img src="https://www.pythonanywhere.com/user/Abdulmalek/files/home/Abdulmalek/mysite/mapserver/scripts/C.png" id="img" align="left" alt="loc" style="width:18px;height:23px">&#160;
-			<b><input class="searchbox" style="text-align: left;" id="address" type="text" size="6" autofocus></b>
-			</br></br>
-			<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			<a href="#" onclick="codeAddress();" class="button2"/>SEARCH</a>
-			</form>
-</div>
-<div id="D2" style="display: none">
-			<form id="myform2" name="myform2">
-			</br>
-			<img src="https://www.pythonanywhere.com/user/Abdulmalek/files/home/Abdulmalek/mysite/mapserver/scripts/A.png" id="img1" align="left" alt="Source" style="width:18px;height:29px">&#160;
-			<b><input class="searchbox1" style="text-align: left;" id="address1" type="text" size="6" ></b>
-			</br></br>
-			<img src="https://www.pythonanywhere.com/user/Abdulmalek/files/home/Abdulmalek/mysite/mapserver/scripts/B.png" id="img2" align="left" alt="Destination" style="width:17px;height:28px">&#160;
-			<b><input class="searchbox2" style="text-align: left;" id="address2" type="text" size="6" ></b>
-			</br></br>
-			<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
-			</br></br>
-			<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
-			</form>
-</div>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places&language=en-AU"></script>
-        <script>
-		 var autocomplete = new google.maps.places.Autocomplete($("#address")[0], {});
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                console.log(place.address_components);
-            });
-			    var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                console.log(place.address_components);
-            });
-			    var autocomplete = new google.maps.places.Autocomplete($("#address2")[0], {});
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                console.log(place.address_components);
-            });
-        </script>
-</div>
-<div id="section1">
-<div id="map"></div>
- <script type="text/javascript">
-            // An example of using the MQA.EventUtil to hook into the window load event and execute the defined
-            // function passed in as the last parameter. You could alternatively create a plain function here and
-            // have it executed whenever you like (e.g. <body onload="yourfunction">).
-
-                MQA.EventUtil.observe(window, 'load', function() {
-
-                // create an object for options
-                var options = {
-                    elt: document.getElementById('map'),             // ID of map element on page
-                    zoom: 14,                                        // initial zoom level of the map
-                    latLng: { lat: 41.1536111, lng: -81.3580556 },     // center of map in latitude/longitude
-					//mtype:'osm'
-                };
-
-                // construct an instance of MQA.TileMap with the options object
-                window.map = new MQA.TileMap(options);
-
-                // download the modules
-
-				  MQA.withModule('largezoom', 'viewoptions', 'traffictoggle', 'mousewheel', 'directions','dotcomwindowmanager', 'remotecollection', 'georssdeserializer', function() {
-				  map.addControl(new MQA.LargeZoom(), new MQA.MapCornerPlacement(MQA.MapCorner.TOP_LEFT, new MQA.Size(5,5)));
-				  map.addControl(new MQA.ViewOptions());
-				  map.enableMouseWheelZoom();
-
-				  // create a remote collection
-                    var photos = new MQA.RemoteCollection('/content/documentation/common/data/pictures.rss', new MQA.GeoRSSDeserializer());
-
-                    // set a custom name for the collection
-                    photos.collectionName = 'photos';
-
-                    // automatically zoom and center the map using the bestFit method after the collection has loaded
-                    MQA.EventManager.addListener(photos, 'loaded', function() {
-                        map.bestFit();
-                    });
-
-                    // add the shape collection to the map
-                    map.addShapeCollection(photos);
-
-                    // pan the map to make the InfoWindow visible
-                    map.windowManager.autoPanToView = true;
-				});
-            });
-
-	  </script>
-	<script type="text/javascript">
-	function codeAddress() {
-    var address = document.getElementById("address").value;
-    MQA.withModule('geocoder', function() {
-    // executes a geocode and adds the result to the map
-    map.geocodeAndAddLocations(address);
-    });
-	}
-	function direction() {
-		    var start = document.getElementById("address1").value;
-			var end = document.getElementById("address2").value;
-
-			// download the modules
-                MQA.withModule('new-route', function() {
-
-                    route = {
-                        request: {
-                            locations: [ start, end ],
-
-                            options: {
-                                avoids: [],
-                                avoidTimedConditions: false,
-                                doReverseGeocode: true,
-                                shapeFormat: 'raw',
-                                generalize: 0,
-                                routeType: 'fastest',
-                                timeType: 1,
-                                locale: 'en_US',
-                                unit: 'm',
-                                enhancedNarrative: false,
-                                drivingStyle: 2,
-                                highwayEfficiency: 21.0
-                            }
-                        },
-
-                        display: {
-                            color: '#0000FF',
-                            borderWidth: 7,
-                        },
-
-                        // on success, display the route narrative
-                        success: function displayNarrative(data) {
-                            if (data.route) {
-                                var legs = data.route.legs,
-                                    html = '',
-                                    i = 0,
-                                    j = 0,
-                                    trek,
-                                    maneuver;
-
-                                html += '<table id="customers"><tbody>';
-
-                                for (; i<legs.length; i++) {
-                                    for (j=0; j<legs[i].maneuvers.length; j++) {
-                                        maneuver = legs[i].maneuvers[j];
-                                        html += '<tr>';
-                                        html += '<td>';
-
-                                        if (maneuver.iconUrl) {
-                                            html += '<img src="' + maneuver.iconUrl + '" />  ';
-                                        }
-
-                                        for (k=0; k<maneuver.signs.length; k++) {
-                                            var sign = maneuver.signs[k];
-
-                                            if (sign && sign.url) {
-                                                html += '<img src="' + sign.url + '" />  ';
-                                            }
-                                        }
-
-                                        //html += maneuver.narrative + '</br>';
-										html += '</td><td>' + maneuver.narrative + '</td>';
-                                        html += '</tr>';
-                                    }
-                                }
-
-                                html += '</tbody></table>';
-                                document.getElementById('route-results').innerHTML = html;
-                            }
-                        }
-                    }
-
-                    map.addRoute(route);
-                });
-	}
-	function myFunction1() {
-     document.getElementById('D1').style.display = "none";
-	 document.getElementById('D2').style.display = "block";
-	 document.getElementById("myform2").reset();
-	 document.getElementById("address1").focus();
-	 document.getElementById("route-results").innerHTML = "";
-	 map.removeRoute(route);
-	}
-	function myFunction2() {
-     document.getElementById('D2').style.display = "none";
-	 document.getElementById('D1').style.display = "block";
-	 document.getElementById("myform1").reset();
-	 document.getElementById("address").focus();
-	  map.removeRoute(route);
-	}
- </script>
-</div>
-</body>
+	</body>
 </html>

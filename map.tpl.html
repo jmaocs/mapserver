@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Map</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<script src="/jquery.min.js"></script>
+		<script src="/jquery.dropotron.min.js"></script>
+		<script src="/skel.min.js"></script>
+		<script src="/skel-layers.min.js"></script>
+		<!--js for left menu-->
+		
+		
+		<!--js and style for slide show-->
+		
+		
+		<script src="/init.js"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="/skel.css" />
+			<link rel="stylesheet" href="/style.css" />
+		</noscript>
+			<link rel="stylesheet" href="/custom/map_table.css" />
+			
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="/ie/v8.css" /><![endif]-->
+
+		<style>
+			#main{
+				margin-left: 5%;
+	      		margin-right: 5%;
+	      		margin-top:-70px;
+				height:100%;
+			}
+	      #map-canvas {
+		  margin-left:50px;
+	      	/*margin-right: 5%;
+	      	margin-top:-70px;*/
+	        width: 70%;
+			
+	        height: 500px;
+			
+	      }
+		  #left-menu{
+		  width:30%;
+		  float:left;	
+		  height:100%;
+		  }
+	    </style>
+	    <script src="https://maps.googleapis.com/maps/api/js"></script>
+	</head>
+	<body class="right-sidebar" >
+
+		<!-- Header -->
+			<div id="header-wrapper" style="height:100%">
+				<div id="header" class="container">
+				<!-- Logo -->
+						<h1 id="logo"><a href="/">Kent Explore</a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="map">Map</a></li>
+								<li class="break"><a href="#">Interests</a></li>
+								<li><a href="aboutus">About Us</a></li>
+							</ul>
+						</nav>
+
+				</div>
+			</div>
+		<!-- Header End-->
+
+		<!-- Main -->
+		<div class="wrapper" id="main">
+		<div id="left-menu" >
+
+		
+<div id="D1">
+			<form id="myform1" name="myform1">
+			<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
+			</br>
+			<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
+			<a href="#" onclick="codeAddress();" class="searchButton"/>SEARCH</a>
+			</form>
+</div>		
+<div id="D2" style="display: none">
+			<form id="myform2" name="myform2">
+			<b><input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
+			</br></br>
+			<b><input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
+			</br></br>
+		
+			<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
+			<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
+			</br></br>
+			<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
+			</form>
+</div>
+
+	
+		</div>
+		<div id="map-canvas"></div>
+		<br><br>
+		<div  id="list" style="width:30%;float:left; height:50%" class="CSSTableGenerator" >
+                <table >
+                    <tr>
+                        <td>
+                            Title 1
+                        </td>
+                        <td >
+                            Title 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 1
+                        </td>
+                        <td>
+                            Row 1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 4
+                        </td>
+                        <td>
+                            Row 4
+                        </td>
+                    </tr>
+					 <tr>
+                        <td >
+                            Row 5
+                        </td>
+                        <td>
+                            Row 5
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+	
+		<div id="slider" style="width: 65%; float:right; height:50%;">
+		<table style="width:100%">
+		<!--first row image-->
+		<tr style="height:50%">
+		<td style="width:33%;">
+			<img style="width:100%; height:100%" id="1_img" src="/apartnment.jpg"></img>
+		</td>
+		<td style="width:33%">
+		<img style="width:100%; height:100%" id="2_img" src="/downtown.jpg"></img>
+		</td>
+		<td style="width:33%">
+		<img style="width:100%; height:100%" id="3_img" src="/hotel.jpg"></img>
+		</td>
+		</tr>
+		<!--second row image-->
+		<tr style="height:50%">
+		<td style="width:33%">
+		<img style="width:100%; height:100%" id="4_img" src="/ksu.jpg"></img>
+		</td>
+		<td style="width:33%">
+		<img style="width:100%; height:100%" id="5_img" src="/sport.jpg"></img>
+		</td>
+		<td style="width:33%">
+		<img style="width:100%; height:100%" id="6_img" src="/restaurant.jpg"></img>
+		</td>
+		</tr>
+		</table>
+		</div>
+		
+		</div>
+	
+		
+		<!-- Main End-->
+
+
+	</body>
+	<script>
+	
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(41.144762,-81.341711),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+		var myLatlng3 = new google.maps.LatLng(41.144762,-81.341711);
+			var contentString3 =
+			'<div id="content3" style="width:170px">'+ 
+			  '<div id="siteNotice3">'+
+			  '</div>'+
+			  '<h3 id="Heading3">KSU - Math and Computer Sciences Building</h3>'+
+			  '<div id="bodyContent3">'+
+			'<p><b>Welcome!</b> <br>' +
+				  '<a href="http:www.cs.kent.edu"> CS Department Website</a>' +
+			'</p>' +
+			  '</div>' +
+			'</div>';
+			
+		  var infowindow3 = new google.maps.InfoWindow({
+			  content: contentString3
+		  });
+		  
+		  var marker3 = new google.maps.Marker({
+			  position: myLatlng3,
+			  map: map,
+			  title: 'KSU CS Department'
+		  });
+		   
+		  google.maps.event.addListener(marker3, 'click', function() {
+			infowindow3.open(map,marker3);
+		  });
+		}
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  
+	  
+	  function myFunction1() {
+     document.getElementById('D1').style.display = "none";
+	 document.getElementById('D2').style.display = "block";
+	 document.getElementById("myform2").reset();
+	 document.getElementById("address1").focus();
+	 document.getElementById("route-results").innerHTML = "";
+	 map.removeRoute(route);
+	}
+	function myFunction2() {
+     document.getElementById('D2').style.display = "none";
+	 document.getElementById('D1').style.display = "block";
+	 document.getElementById("myform1").reset();
+	 document.getElementById("address").focus();
+	  map.removeRoute(route);
+	}
+    </script>
+	
+
+</html>

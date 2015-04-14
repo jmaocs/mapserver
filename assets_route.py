@@ -2,7 +2,8 @@ from bottle import route, static_file, get
 
 ################################################################################
 # Static Routes: js, css, img, fonts
-root_url = '/home/jmao/mapserver/'
+#root_url = '/home/jmao/mapserver/'
+root_url = './'
 @get('/<filename:re:.*\.js>')
 def javascripts(filename):
     return static_file(filename, root= root_url + 'assets/js')
