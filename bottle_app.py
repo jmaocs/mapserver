@@ -1,11 +1,16 @@
-import assets_route
+import assets_route, json
 from bottle import route, run, debug, template, request, static_file, error, get, default_app
+
 
 #root_url = '/home/jmao/mapserver/'
 root_url = './'
+
+poi = json.load(open(root_url + 'poi.json'))
+print(poi["restaurants"]["rays_place"])
+
 @route('/', method='GET')
-def load():
-    return template(root_url + 'index.tpl')
+def index():
+	return template(root_url + 'index.tpl', data = poi)
 
 @route('/map', method='GET')
 def map():
