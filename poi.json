@@ -1,6 +1,15 @@
 {
   "downtown": {
-    
+      "downtown_gallery":{
+        "title" : "Downtown Gallery",
+        "type"  : "downtown",
+        "website" : "http://art.kent.edu/galleries/secondary/downtown/downtown.html",
+        "address" : "141 E. Main St, Kent OH 44240",
+        "phone" : "(330) 6676-1549",
+        "images" : "/downtown/downtown_gallery.png",
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
+      }
    },
   "restaurants": {
     "rays_place": {
@@ -32,26 +41,45 @@
       "images" : "/restaurants/mexican_grill/mexican_grill.png",
       "latitude" : 41.152511,
       "longtitude" : -81.357542
-    },
-     "kent_hotel": {
-      "title" : "Kent Hotel and Conference Center",
-      "type"  : "hotels",
-      "website" : "http://www.kentstatehotel.com/",
-      "address" : "215 S Depeyster St, Kent, Ohio 44240",
-      "phone" : "(330) 346-0100",
-      "images" : "",
-      "latitude" : 41.152511,
-      "longtitude" : -81.357542
     }
   },
   "apartments": {
+     "eagles_landing": {
+      "title" : "Eagles Landing",
+      "type"  : "apartments",
+      "website" : "http://www.kentapartments.com/",
+      "address" : "936 Morris Rd. Kent, OH 44240",
+      "phone" : "(330) 673-8887",
+      "images" : "/apartments/eagles_landing.png",
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
+    }
     
   },
   "sports": {
+    "stadium": {
+      "title" : "Dix Stadium",
+      "type"  : "sports",
+      "website" : "http://www.kent.edu/tags/dix-stadium",
+      "address" : " 2213 Summit Rd, Kent, OH 44242",
+      "phone" : "(330) 672-2078",
+      "images" : "/sports/stadium.jpg",
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
+    }
     
   },
   "ksu": {
-
+    "library": {
+      "title" : "Kent State Library",
+      "type"  : "ksu",
+      "website" : "http://www.library.kent.edu/",
+      "address" : "1125 Risman Dr., Kent, OH 44242",
+      "phone" : "(330) 672-3456",
+      "images" : "/ksu/library.jpg",
+      "latitude" : 41.146733,
+      "longtitude" : -81.342439
+    }
   },
   "hotels": {
     "kent_hotel": {
@@ -61,8 +89,8 @@
       "address" : "215 S Depeyster St, Kent, Ohio 44240",
       "phone" : "(330) 346-0100",
       "images" : "/hotels/kent_hotel/kent_hotel.jpg",
-      "latitude" : 41.152511,
-      "longtitude" : -81.357542
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
     }
   },
   "events" : {}
