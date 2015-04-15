@@ -13,7 +13,7 @@ def map():
 
 
 @route('/aboutus', method='GET')
-def map():
+def aboutus():
     return template(root_url + 'aboutus.tpl')
 
 
