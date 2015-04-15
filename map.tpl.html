@@ -109,77 +109,32 @@
 		</div>
 		<div id="map-canvas"></div>
 		<br><br>
-		<h3><b>Top Five Recommendation:</b></h3>
+
+		
+
+
+		<!-- Recommendations -->
+		<h3><b>Top Recommendations</b></h3>
 		<div style="height:10px; ;width:30%; background-color:black">&nbsp;</div>
 		<div  id="list" style="width:30%;float:left; height:50%">
                 <table class="recommendation_table" >
-                    <tr class="recommendation_tr" id="1" >
-                        <td style="width:30%;" class="recommendation_td">
-                            <img src="/hotel.jpg" class="recommendation_img" ></img>
-                        </td>
-                        <td style="width:70%;padding-left:10px;" class="recommendation_td">
-                            <a href= "http://www.raysplacekent.com/" >Ray's Place</a>
-                            <br>
-                            135 Franklin Ave, Kent, OH 44240
-                            <br>
-                            (330) 673-2233
-
-                        </td>
-                    </tr>
-                    <tr class="recommendation_tr" id="2" >
-                        <td style="width:30%;" class="recommendation_td">
-                            <img src="/hotel.jpg" class="recommendation_img" ></img>
-                        </td>
-                        <td style="width:70%;padding-left:10px;" class="recommendation_td">
-                            <a href= "http://www.raysplacekent.com/" >Ray's Place</a>
-                            <br>
-                            135 Franklin Ave, Kent, OH 44240
-                            <br>
-                            (330) 673-2233
-
-                        </td>
-                    </tr>
-                    <tr class="recommendation_tr" id="3" >
-                        <td style="width:30%;" class="recommendation_td">
-                            <img src="/hotel.jpg" class="recommendation_img" ></img>
-                        </td>
-                        <td style="width:70%;padding-left:10px;" class="recommendation_td">
-                            <a href= "http://www.raysplacekent.com/" >Ray's Place</a>
-                            <br>
-                            135 Franklin Ave, Kent, OH 44240
-                            <br>
-                            (330) 673-2233
-
-                        </td>
-                    </tr>
-                    <tr class="recommendation_tr" id="4" >
-                        <td style="width:30%;" class="recommendation_td">
-                            <img src="/hotel.jpg" class="recommendation_img" ></img>
-                        </td>
-                        <td style="width:70%;padding-left:10px;" class="recommendation_td">
-                            <a href= "http://www.raysplacekent.com/" >Ray's Place</a>
-                            <br>
-                            135 Franklin Ave, Kent, OH 44240
-                            <br>
-                            (330) 673-2233
-
-                        </td>
-                    </tr>
-                    <tr class="recommendation_tr" id="5" >
-                        <td style="width:30%;" class="recommendation_td">
-                            <img src="/hotel.jpg" class="recommendation_img" ></img>
-                        </td>
-                        <td style="width:70%;padding-left:10px;" class="recommendation_td">
-                            <a href= "http://www.raysplacekent.com/" >Ray's Place</a>
-                            <br>
-                            135 Franklin Ave, Kent, OH 44240
-                            <br>
-                            (330) 673-2233
-
-                        </td>
-                    </tr>
+                	<% if topic is not None: %>
+						<% for each in topic: %>
+							<% item = topic[each]%>
+							 <tr class="recommendation_tr" >
+			                       <td style="width:30%;" class="recommendation_td">
+			                           <img src="/hotel.jpg" class="recommendation_img" ></img>
+			                       </td>
+			                       <td style="width:70%;padding-left:10px;" class="recommendation_td">
+			                           <a href= {{item["website"]}} >{{item["title"]}}</a>
+			                           <br> {{item["address"]}}
+			                           <br> {{item["phone"]}}
+			                       </td>
+			                  </tr>
+			            % end
+			        % end
                 </table>
-            </div>
+        </div>
             
 	
 		<div id="slider" style="width: 65%; float:right; height:50%;">

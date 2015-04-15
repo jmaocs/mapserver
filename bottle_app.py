@@ -6,7 +6,7 @@ from bottle import route, run, debug, template, request, static_file, error, get
 root_url = './'
 
 poi = json.load(open(root_url + 'poi.json'))
-print(poi["restaurants"]["rays_place"])
+
 
 @route('/', method='GET')
 def index():
@@ -15,6 +15,10 @@ def index():
 @route('/map', method='GET')
 def map():
     return template(root_url + 'map.tpl')
+
+@route('/map/:topic', method='GET')
+def map_topic(topic):
+	return template(root_url + 'map.tpl', topic = poi[topic])
 
 
 @route('/aboutus', method='GET')
