@@ -298,7 +298,7 @@
 			{
 			}
 			
-				ul.icons li:before
+				/*ul.icons li:before
 				{
 					display: inline-block;
 					color: #fff;
@@ -309,7 +309,7 @@
 					text-align: center;
 					line-height: 2em;
 					margin-right: 0.75em;
-				}
+				}*/
 
 			ul.menu
 			{
@@ -516,7 +516,7 @@
 		text-decoration: none;
 	}
 
-		.icon:before {
+		/*.icon:before {
 			display: inline-block;
 			font-family: FontAwesome;
 			font-size: 1.25em;
@@ -526,7 +526,7 @@
 			line-height: 1;
 			-webkit-font-smoothing:antialiased;
 			-moz-osx-font-smoothing:grayscale;
-		}
+		}*/
 		
 		.icon > .label {
 			display: none;
