@@ -68,7 +68,7 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="/">Home</a></li>
-								<li><a href="map">Map</a></li>
+								<li><a href="/map">Map</a></li>
 								<li class="break"><a href="#">Interests</a></li>
 								<li><a href="aboutus">About Us</a></li>
 							</ul>
@@ -83,52 +83,67 @@
 		<div id="left-menu" >
 
 		
-<div id="D1">
-			<form id="myform1" name="myform1">
-			<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
-			</br>
-			<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
-			<a href="#" onclick="codeAddress();" class="searchButton"/>SEARCH</a>
-			</form>
-</div>		
-<div id="D2" style="display: none">
-			<form id="myform2" name="myform2">
-			<b><input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
-			</br></br>
-			<b><input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
-			</br></br>
-		
-			<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
-			<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
-			</br></br>
-			<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
-			</form>
-</div>
+			<div id="D1">
+						<form id="myform1" name="myform1">
+						<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
+						</br>
+						<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
+						<a href="#" onclick="codeAddress();" class="searchButton"/>SEARCH</a>
+						</form>
+			</div>		
+			<div id="D2" style="display: none">
+						<form id="myform2" name="myform2">
+						<b><input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
+						</br></br>
+						<b><input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
+						</br></br>
+					
+						<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
+						<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
+						</br></br>
+						<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
+						</form>
+			</div>
 
 	
 		</div>
+
+		<!-- Container for google map -->
 		<div id="map-canvas"></div>
 		<br><br>
 
 		
 
 
-		<!-- Recommendations -->
+		<!-- Recommendations List-->
 		<h3><b>Top Recommendations</b></h3>
-		<div style="height:10px; ;width:30%; background-color:black">&nbsp;</div>
+		<div style="height:10px; ;width:30%; background-color:black">&nbsp;</div>	
 		<div  id="list" style="width:30%;float:left; height:50%">
-                <table class="recommendation_table" >
-                	<% if topic is not None: %>
-						<% for each in topic: %>
-							<% item = topic[each]%>
-							 <tr class="recommendation_tr" >
-			                       <td style="width:30%;" class="recommendation_td">
-			                           <img src="/hotel.jpg" class="recommendation_img" ></img>
+                <table class="recommendation_table">
+                	% if topic is not None:
+						% for each in topic:
+							% item = topic[each]
+							% sign_name= "/signs/" + item['type']+ ".png"
+							% left_img = item["images"]
+							% if left_img == "":
+							% left_img = "/bg.jpg"
+							% end
+
+							 <tr class="recommendation_tr" style="height:100px">
+			                       <td style="width:25%;height:100px" class="recommendation_td">
+			                           <img src={{left_img}} class="recommendation_img" style="width:100%;height:80px;" ></img>
 			                       </td>
-			                       <td style="width:70%;padding-left:10px;" class="recommendation_td">
-			                           <a href= {{item["website"]}} >{{item["title"]}}</a>
-			                           <br> {{item["address"]}}
-			                           <br> {{item["phone"]}}
+			                       <td style="width:70%;height:100px;padding-left:5px;" class="recommendation_td">
+			                       		<ul style="padding-top:0px">
+				                       	   <li> 
+				                       	   		<img src={{sign_name}} style="width:25px; height=25px; padding-top:2px">				    
+				                       	   		<a href= {{item["website"]}} style="padding-top:2px; vertical-align: text-bottom; font-size:medium">{{item["title"]}}</a> 
+				                           </li>
+				                            
+				                           <li > {{item["address"]}} </li>
+				                           <li> {{item["phone"]}}	</li>
+			                           </ul>
+			                           
 			                       </td>
 			                  </tr>
 			            % end
@@ -136,34 +151,62 @@
                 </table>
         </div>
             
-	
+		<!-- Top images-->
 		<div id="slider" style="width: 65%; float:right; height:50%;">
-		<table style="width:100%">
-		<!--first row image-->
-		<tr style="height:50%">
-		<td style="width:33%;">
-			<img class="slider_img" style="width:100%;height:100%"id="1_img" src="/apartnment.jpg"></img>
-		</td>
-		<td style="width:33%">
-		<img class="slider_img" style="width:100%;height:100%" id="2_img" src="/downtown.jpg"></img>
-		</td>
-		<td style="width:33%">
-		<img class="slider_img" style="width:100%;height:100%" id="3_img" src="/hotel.jpg"></img>
-		</td>
-		</tr>
-		<!--second row image-->
-		<tr style="height:50%">
-		<td style="width:33%">
-		<img class="slider_img" style="width:100%;height:100%" id="4_img" src="/ksu.jpg"></img>
-		</td>
-		<td style="width:33%">
-		<img class="slider_img" style="width:100%;height:100%" id="5_img" src="/sport.jpg"></img>
-		</td>
-		<td style="width:33%">
-		<img class="slider_img" style="width:100%;height:100%" id="6_img" src="/restaurant.jpg"></img>
-		</td>
-		</tr>
-		</table>
+			<!-- <div style="width:100%"> -->
+				% if topic is not None:
+					% img_id = 0
+					% for each in topic:
+						% item = topic[each]
+					    % if (item["images"] == "" or item["website"] == ""):
+					    	% continue
+					    % end
+						% if (img_id >= 3):
+						<br>
+						<div style="width:33%;height:50%; float:left">
+							<a href={{item["website"]}} class="img_link">
+								<img class="slider_img" style="width:100%;height:200px" src={{item["images"]}}></img>
+							</a>
+						</div>
+						% else :
+							<div style="width:33%;height:50%;float:left">
+								<a href={{item["website"]}} class="img_link">
+									<img class="slider_img" style="width:100%;height:200px" src={{item["images"]}}></img>
+								</a>
+							</div>
+						% end
+						% img_id = img_id + 1
+						% print img_id
+				    % end
+			    % end
+			<!-- </div> -->
+
+		<!-- 	<table style="width:100%">
+				
+				<tr style="height:50%">
+					<td style="width:33%;">
+						<img class="slider_img" style="width:100%;height:100%"id="1_img" src="/apartnment.jpg"></img>
+					</td>
+					<td style="width:33%">
+					<img class="slider_img" style="width:100%;height:100%" id="2_img" src="/downtown.jpg"></img>
+					</td>
+					<td style="width:33%">
+					<img class="slider_img" style="width:100%;height:100%" id="3_img" src="/hotel.jpg"></img>
+					</td>
+				</tr>
+				
+				<tr style="height:50%">
+					<td style="width:33%">
+					<img class="slider_img" style="width:100%;height:100%" id="4_img" src="/ksu.jpg"></img>
+					</td>
+					<td style="width:33%">
+					<img class="slider_img" style="width:100%;height:100%" id="5_img" src="/sport.jpg"></img>
+					</td>
+					<td style="width:33%">
+					<img class="slider_img" style="width:100%;height:100%" id="6_img" src="/restaurant.jpg"></img>
+					</td>
+				</tr>
+			</table> -->
 		</div>
 		
 		</div>
@@ -214,20 +257,20 @@
 	  
 	  
 	  function myFunction1() {
-     document.getElementById('D1').style.display = "none";
-	 document.getElementById('D2').style.display = "block";
-	 document.getElementById("myform2").reset();
-	 document.getElementById("address1").focus();
-	 document.getElementById("route-results").innerHTML = "";
-	 map.removeRoute(route);
-	}
-	function myFunction2() {
-     document.getElementById('D2').style.display = "none";
-	 document.getElementById('D1').style.display = "block";
-	 document.getElementById("myform1").reset();
-	 document.getElementById("address").focus();
-	  map.removeRoute(route);
-	}
+	     document.getElementById('D1').style.display = "none";
+		 document.getElementById('D2').style.display = "block";
+		 document.getElementById("myform2").reset();
+		 document.getElementById("address1").focus();
+		 document.getElementById("route-results").innerHTML = "";
+		 map.removeRoute(route);
+		}
+	  function myFunction2() {
+	     document.getElementById('D2').style.display = "none";
+		 document.getElementById('D1').style.display = "block";
+		 document.getElementById("myform1").reset();
+		 document.getElementById("address").focus();
+		  map.removeRoute(route);
+		}
     </script>
 	
 

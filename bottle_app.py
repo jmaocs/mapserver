@@ -14,7 +14,7 @@ def index():
 
 @route('/map', method='GET')
 def map():
-    return template(root_url + 'map.tpl')
+    return template(root_url + 'map.tpl', topic = None)
 
 @route('/map/:topic', method='GET')
 def map_topic(topic):
@@ -24,6 +24,10 @@ def map_topic(topic):
 @route('/aboutus', method='GET')
 def aboutus():
     return template(root_url + 'aboutus.tpl')
+
+@route('/test')
+def test():
+	return template(root_url + 'test_image.tpl')
 
 
 

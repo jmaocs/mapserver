@@ -27,6 +27,10 @@
 .slider_img
 {
 	padding-left:1px;
-	padding-bottom: 1px;
+	/*padding-bottom: 1px;*/
+	outline: none;
 
+}
+.img_link{
+	text-decoration: none;
 }

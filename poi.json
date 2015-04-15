@@ -5,28 +5,41 @@
   "restaurants": {
     "rays_place": {
       "title" : "Ray's Place",
+      "type"  : "restaurants",
       "website" : "http://www.raysplacekent.com/",
       "address" : "135 Franklin Ave, Kent, OH 44240",
       "phone" : "(330) 673-2233",
-      "images" : "images/restaurants/mexican_grill/",
+      "images" : "/restaurants/rays_place/rays_place.png",
       "latitude" : 41.153149,
       "longtitude" : -81.358702
     },
     "buffalo": {
       "title" : "Buffalo Wings",
+      "type"  : "restaurants",
       "website" : "http://www.buffalowildwings.com/",
       "address" : "176 E Main St, Kent, OH 44240",
       "phone" : "(330) 678-9464",
-      "images" : "images/restaurants/buffalo/",
+      "images" : "/restaurants/buffalo/buffalo.png",
       "latitude" : 41.153516,
       "longtitude" : -81.356653
     },
     "mexican_grill": {
       "title" : "Fresco Mexican Grill & Salsa Bar",
+      "type"  : "restaurants",
       "website" : "http://www.getfresco.com/",
-      "address" : "100 E. Erie St., Suite 112, Kent, OH 44240",
+      "address" : "100 E. Erie St., Kent, OH 44240",
       "phone" : "(330) 677-2588",
-      "images" : "images/restaurants/mexican_grill/",
+      "images" : "/restaurants/mexican_grill/mexican_grill.png",
+      "latitude" : 41.152511,
+      "longtitude" : -81.357542
+    },
+     "kent_hotel": {
+      "title" : "Kent Hotel and Conference Center",
+      "type"  : "hotels",
+      "website" : "http://www.kentstatehotel.com/",
+      "address" : "215 S Depeyster St, Kent, Ohio 44240",
+      "phone" : "(330) 346-0100",
+      "images" : "",
       "latitude" : 41.152511,
       "longtitude" : -81.357542
     }
@@ -40,5 +53,17 @@
   "ksu": {
 
   },
-  "hotels": {}
+  "hotels": {
+    "kent_hotel": {
+      "title" : "Kent Hotel and Conference Center",
+      "type"  : "hotels",
+      "website" : "http://www.kentstatehotel.com/",
+      "address" : "215 S Depeyster St, Kent, Ohio 44240",
+      "phone" : "(330) 346-0100",
+      "images" : "/hotels/kent_hotel/kent_hotel.jpg",
+      "latitude" : 41.152511,
+      "longtitude" : -81.357542
+    }
+  },
+  "events" : {}
 }
