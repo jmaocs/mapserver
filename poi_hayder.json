@@ -7,8 +7,8 @@
         "address" : "152 E. Main Street, Kent, OH 44240",
         "phone" : "330-474-1330",
         "images" : "/downtown/wagon.png",
-        "latitude" : 41.153777,
-        "longtitude" : -81.356985
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
       },
       "balloonfun":{
         "title" : "America's Unknown Destinations",
@@ -17,8 +17,8 @@
         "address" : "4187 Lynwood Road, Kent, OH",
         "phone" : "330-673-4180",
         "images" : "/downtown/balloonfun.png",
-        "latitude" : 41.102199,
-        "longtitude" : -81.324993
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
       },
       "kent_stage":{
         "title" : "The Kent Stage",
@@ -27,8 +27,8 @@
         "address" : "175 East Main Street, Kent, OH 44240",
         "phone" : "330-677-5005",
         "images" : "/downtown/kent_stage.png",
-        "latitude" : 41.154123,
-        "longtitude" : -81.356596
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
       },
 
       "downtown_gallery":{
@@ -36,66 +36,11 @@
         "type"  : "downtown",
         "website" : "http://art.kent.edu/galleries/secondary/downtown/downtown.html",
         "address" : "141 E. Main St, Kent OH 44240",
-        "phone" : "(330) 667-1549",
+        "phone" : "(330) 6676-1549",
         "images" : "/downtown/downtown_gallery.png",
         "latitude" : 41.154204,
         "longtitude" : -81.357319
-      },
-
-      "book_shops":{
-        "title" : "Book Shops",
-        "type"  : "downtown",
-        "website" : "http://campusbookonline.com/KENT/Home.aspx",
-        "address" : "112 S. Lincoln St. Kent, OH",
-        "phone" : "(330) 667-1549",
-        "images" : "/downtown/book_shops.png",
-        "latitude" : 41.154948,
-        "longtitude" : -81.351534
-      },
-
-      "grocery":{
-        "title" : "Grocery & Markets",
-        "type"  : "downtown",
-        "website" : "http://haymakermarket.com/",
-        "address" : "112 S. Lincoln St. Kent, OH",
-        "phone" : "(330) 667-1549",
-        "images" : "/downtown/grocery.png",
-        "latitude" : 41.151595,
-        "longtitude" : -81.360335
-      },
-      "city_bank":{
-        "title" : "City Bank Antiques ",
-        "type"  : "downtown",
-        "website" : "http://www.citybankantiques.com/",
-        "address" : "115 South Water St. Kent, OH",
-        "phone" : "(330) 677-1479",
-        "images" : "/downtown/city_bank.png",
-        "latitude" : 41.151595,
-        "longtitude" : -81.360335
-      },   
-
-      "empire":{
-        "title" : "Empire",
-        "type"  : "downtown",
-        "website" : "http://www.citybankantiques.com/",
-        "address" : "135 East Main Street. Kent, OH",
-        "phone" : "(330) 968-4946",
-        "images" : "/downtown/empire.png",
-        "latitude" : 41.151595,
-        "longtitude" : -81.360335
-      },  
-
-
-      "media_art":{
-        "title" : "All Media Art Supplies",
-        "type"  : "downtown",
-        "website" : "http://www.allmediaartsupply.com/",
-        "address" : "417 E. Main St. Kent, OH",
-        "phone" : "(330) 678-8078",
-        "images" : "/downtown/media_art.png",
-        "latitude" : 41.155108,
-        "longtitude" : -81.352145
-      } 
+      }
    },
 
 
@@ -130,125 +75,62 @@
       "latitude" : 41.152511,
       "longtitude" : -81.357542
     },
-
-    "twist": {
-      "title" : "Twisted Meltz",
-      "type"  : "restaurants",
-      "website" : "http://www.twistedmeltz.com/",
-      "address" : "164 E Main St. Kent, OH 44240",
-      "phone" : "(330) 968-4104",
-      "images" : "/restaurants/twist.png", 
-      "latitude" : 41.153728,
-      "longtitude" : -81.356841
-    },
-
-    "pita_pit": {
+    "Pita Pit": {
       "title" : "Pita Pit",
       "type"  : "restaurants",
       "website" : "http://pitapitusa.com/",
       "address" : "154 E Main St Kent, OH 44240",
       "phone" : "(330) 346-0334",
-      "images" : "/restaurants/pita_pit.png",
+      "images" : " ",
       "latitude" : 41.153455,
       "longtitude" : -81.357382
     },
-    "troy_grille": {
-      "title" : "Troy Grille",
+    "Troy Grille": {
+      "title" : "Pita Pit",
       "type"  : "restaurants",
       "website" : "http://i99413.wix.com/troy",
       "address" : "118 E Main St Kent, OH 44240",
       "phone" : "(330) 474-1661",
-      "images" : "/restaurants/troy.png",
-      "latitude" : 41.153866,
-      "longtitude" : -81.357675
+      "images" : " ",
+      "latitude" : 41.153924,
+      "longtitude" : -81.357640
     },
-    "continental_grill": {
+    "Main Street Continental Grill": {
       "title" : "Main Street Continental Grill",
       "type"  : "restaurants",
       "website" : "http://www.mymainstreetgrill.com/",
       "address" : "911 E Main St Kent, OH 44240",
       "phone" : "(330) 678-0800",
-      "images" : "/restaurants/continental_grill.jpg",
+      "images" : " ",
       "latitude" : 41.154473,
       "longtitude" : -81.345945
     },
-    "pufferbelly_ltd": {
+    "The Pufferbelly Ltd": {
       "title" : "The Pufferbelly Ltd",
       "type"  : "restaurants",
       "website" : "http://www.pufferbellyltd.com/",
       "address" : "152 Franklin Ave St Kent, OH 44240",
       "phone" : "(330) 673-1771",
-      "images" : "/restaurants/pufferbelly_ltd.jpg",
+      "images" : " ",
       "latitude" : 41.153294,
       "longtitude" : -81.359228
     },
-    "guaca-Moles_mexican_grill": {
+    "Guaca-Moles Mexican Grill & Cantina": {
       "title" : "Guaca-Moles Mexican Grill & Cantina",
       "type"  : "restaurants",
-      "website" : "http://www.yelp.com/biz/guacamoles-kent",
-      "address" : "1888 State Rt 59, Kent, OH 44240",
+      "website" : "",
+      "address" : "1888 OH-59 Kent, OH 44240",
       "phone" : "(330) 676-0710",
-      "images" : "/restaurants/guaca.jpg",
+      "images" : " ",
       "latitude" : 41.155620,
       "longtitude" : -81.325389
-    },
-
-    "mikes_place": {
-      "title" : "Mike's Place",
-      "type"  : "restaurants",
-      "website" : "http://mikesplacerestaurant.com/",
-      "address" : "1700 S Water St, Kent, OH 44240",
-      "phone" : "(330) 673-6501",
-      "images" : "/restaurants/mikes_place.png",
-      "latitude" : 41.134714,
-      "longtitude" : -81.354520
-    }, 
-
-    "wild_goats": {
-      "title" : "Wild Goats Café",
-      "type"  : "restaurants",
-      "website" : "http://www.wildgoatscafe.com/",
-      "address" : "319 W Main St, Kent, OH 44240",
-      "phone" : "(330) 677-2326",
-      "images" : "/restaurants/wild_goats.png",
-      "latitude" : 41.134714,
-      "longtitude" : -81.354520
-    },
-
-    "square_deli": {
-      "title" : "Franklin Square Deli ",
-      "type"  : "restaurants",
-      "website" : "www.franklinsquaredeli.com",
-      "address" : "Main St, Kent, OH 44240",
-      "phone" : "(330) 677-2326",
-      "images" : "/restaurants/square_deli.png",
-      "latitude" : 41.154272,
-      "longtitude" : -81.358493
-    },
-
-    "laziza": {
-      "title" : "Laziza",
-      "type"  : "restaurants",
-      "website" : " www.yourlaziza.com",
-      "address" : "195 East Erie, Kent, OH",
-      "phone" : "(330) 677-7000",
-      "images" : "/restaurants/laziza.png",
-      "latitude" : 41.154272,
-      "longtitude" : -81.358493
-    }, 
-
-     "wild_papaya": {
-      "title" : "Wild Papaya",
-      "type"  : "restaurants",
-      "website" : " www.wildpapayaohio.com",
-      "address" : "1665 E Main St, Suite 100C, Kent, OH",
-      "phone" : "(330) 677-0916",
-      "images" : "/restaurants/wild_papaya.png",
-      "latitude" : 41.156001,
-      "longtitude" : -81.333657
     }
-
+    
+    
   },
+
+
+
 
 
 
@@ -260,8 +142,8 @@
       "address" : "609 S Lincoln St,Unit F,Kent,Ohio 44240",
       "phone" : "(330) 673-8300",
       "images" : "/apartments/eagles_landing.png",
-      "latitude" : 41.147452,
-      "longtitude" : -81.350572
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
     },
     "the_province": {
       "title" : "The Province",
@@ -270,8 +152,8 @@
       "address" : "936 Morris Rd. Kent, OH 44240",
       "phone" : "(330) 673-8887",
       "images" : "/apartments/the_province.png",
-      "latitude" : 41.145395,
-      "longtitude" : -81.349325
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
     },
      "oaks": {
       "title" : "University Oaks",
@@ -280,8 +162,8 @@
       "address" : "500 Golden Oaks Dr, Kent, OH 44240",
       "phone" : "(330) 403-4131",
       "images" : "/apartments/oaks.png",
-      "latitude" : 41.150452,
-      "longtitude" : -81.335217
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
     }, 
     "holly_park": {
       "title" : "Holly Park",
@@ -290,8 +172,8 @@
       "address" : "1652 Mulberry Ct, Kent, OH 44240",
       "phone" : "(330) 678-0823",
       "images" : "/apartments/holly_park.png",
-      "latitude" : 41.153893,
-      "longtitude" : -81.333408
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
     },
     "campus_pointe": {
       "title" : "Campus Pointe",
@@ -300,8 +182,18 @@
       "address" : "1841 ASHTON LANE Kent, OH 44240",
       "phone" : "(330) 673-2202",
       "images" : "/apartments/campus_pointe.png",
-      "latitude" : 41.156680,
-      "longtitude" : -81.328436
+      "latitude" : 41.145452,
+      "longtitude" : -81.349347
+    },
+    "College Towers Apartments": {
+      "title" : "College Towers Apartments",
+      "type"  : "apartments",
+      "website" : "http://www.kentapartments.com/college-towers-apartments",
+      "address" : "1800 Rhodes Rd OH 44240",
+      "phone" : "(330) 678-0746",
+      "images" : "/apartments/campus_pointe.png",
+      "latitude" : 41.147412,
+      "longtitude" : -81.333414
     }
     
   },
@@ -326,8 +218,8 @@
       "address" : "1550 Ted Boyd Drive, Kent, Ohio 44242",
       "phone" : "(330) 672-4732",
       "images" : "/sports/rec_center.png",
-      "latitude" : 41.141720,
-      "longtitude" : -81.340134
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
     }, 
     "ice_arean": {
       "title" : "Ice Arena",
@@ -336,8 +228,8 @@
       "address" : "650 Loop Road, Kent, Ohio 44240",
       "phone" : "(330) 672-7465",
       "images" : "/sports/ice_arean.png",
-      "latitude" : 41.146036,
-      "longtitude" : -81.335830
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
     }, 
 
      "golf": {
@@ -347,8 +239,8 @@
       "address" : "3734 Sunny Brook Road, Kent, Ohio 44240",
       "phone" : "(330) 673-1785",
       "images" : "/sports/golf.png",
-      "latitude" : 41.090883,
-      "longtitude" : -81.367064
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
     },
     "basketball" : {
       "title" : "Basketball",
@@ -357,29 +249,8 @@
       "address" : "MAC Center Kent State University",
       "phone" : "(330) 672-2495",
       "images" : "/sports/basketball.png",
-      "latitude" : 41.148292,
-      "longtitude" : -81.344206
-    },
-
-    "sports_frame": {
-      "title" : "Kent Lanes-11th Frame",
-      "type"  : "sports",
-      "website" : "http://www.kentlanes.com/bowlnow/",
-      "address" : "1524 S Water St, Kent, OH 44240",
-      "phone" : "(330) 673-1448",
-      "images" : "/sports/sports_frame.png",
-      "latitude" : 41.139167,
-      "longtitude" : -81.357887
-    },
-    "sports_family": {
-      "title" : "Sto-Kent Family Entertainment",
-      "type"  : "sports",
-      "website" : "http://sto-kentfamilyentertainment.com",
-      "address" : "3870 Fishcreek Rd, Stow, OH 44224",
-      "phone" : "(330) 673-1718",
-      "images" : "/sports/sports_family.png",
-      "latitude" : 41.161553,
-      "longtitude" : -81.402776
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
     }
     
   },
@@ -392,8 +263,8 @@
         "address" : "Taylor Hall, Kent OH 44240",
         "phone" : "unavailable",
         "images" : "/ksu/may4.png",
-        "latitude" : 41.150327,
-        "longtitude" : -81.344002
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
     },
     
     "ksu_museum":{
@@ -403,8 +274,8 @@
         "address" : "515 Hilltop Drive, Kent, OH",
         "phone" : "unavailable",
         "images" : "/ksu/ksu_museum.png",
-        "latitude" : 41.152895,
-        "longtitude" : -81.349897
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
     },
     "library": {
       "title" : "Kent State Library",
@@ -413,8 +284,8 @@
       "address" : "1125 Risman Dr., Kent, OH 44242",
       "phone" : "(330) 672-3456",
       "images" : "/ksu/library.jpg",
-      "latitude" : 41.146685,
-      "longtitude" : -81.342482
+      "latitude" : 41.146733,
+      "longtitude" : -81.342439
     },
     "stone": {
       "title" : "Graffiti Stone",
@@ -423,62 +294,9 @@
       "address" : "800 E Summit St Kent, OH 44240",
       "phone" : "unavailable",
       "images" : "/ksu/stone.png",
-      "latitude" : 41.147129,
-      "longtitude" : -81.347961
-    },
-
-
-    "ksu_msb":{
-        "title" : "Math And Science Building",
-        "type"  : "ksu",
-        "website" : "http://www.kent.edu/math",
-        "address" : "233 MSB, 1300 Lefton Esplanade, Kent, Ohio 44242",
-        "phone" : "330-672-2430",
-        "images" : "/ksu/ksu_msb.jpg",
-        "latitude" : 41.144983, 
-        "longtitude" :-81.341682
-      },
-      "ksu_tri":{
-        "title" : "Tri-Towers Rotunda",
-        "type"  : "ksu",
-        "website" : "https://www.kent.edu/dining/tri-towers-rotunda",
-        "address" : "17 Senhauser Drive – Beall Hall Second Floor, Kent, OH,44242",
-        "phone" : "330-672-2541",
-        "images" : "/ksu/ksu_tri.png",
-        "latitude" : 41.147152, 
-        "longtitude" : -81.337656
-      },
-      "ksu_lab":{
-        "title" : "Ceramics Lab",
-        "type"  : "ksu",
-        "website" : "https://www2.kent.edu/art/academics/crafts/ceramics/index.cfm",
-        "address" : "Ceramics Laboratory, Kent State University,Kent,OH,44240",
-        "phone" : "330-672-3000",
-        "images" : "/ksu/ksu_lab.jpg",
-        "latitude" : 41.147477,
-        "longtitude" : -81.346370
-      },
-
-      "ksu_smith":{
-        "title" : "Smith Hall",
-        "type"  : "ksu",
-        "website" : "http://www.kent.edu",
-        "address" : "Smith Hall,",
-        "phone" : "unavailable",
-        "images" : "/ksu/ksu_smith.jpg",
-        "latitude" : 41.145747,
-        "longtitude" : -81.342476
-      },
-      "ksu_center":{
-        "title" : "Kent Student Center",
-        "type"  : "ksu",
-        "website" : "http://www.kent.edu/kentstudentcenter",
-        "address" : "1075 Risman Dr., Kent, Ohio 44240,",
-        "phone" : "330-672-2554",
-        "images" : "/ksu/ksu_center.jpg",
-        "latitude" : 41.147776,
-        "longtitude" :  -81.343098
-      }
+      "latitude" : 41.146733,
+      "longtitude" : -81.342439
+    }
   },
 
   "hotels": {
@@ -500,8 +318,8 @@
       "address" : "1215 Sanctuary View Dr, Kent, OH 44240",
       "phone" : "(877-859-5095",
       "images" : "/hotels/holiday_inn/holiday_inn.png",
-      "latitude" : 41.111764,
-      "longtitude" : -81.349542
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
     }, 
     "comfort_inn": {
       "title" : "Comfort Inn & Suites",
@@ -510,8 +328,8 @@
       "address" : "4423 State Route 43, Kent, OH 44240",
       "phone" : "(330) 673-1888",
       "images" : "/hotels/comfort_inn/comfort_inn.png",
-      "latitude" : 41.110331,
-      "longtitude" : -81.348664
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
     }, 
     
     "hampton_inn": {
@@ -521,9 +339,10 @@
       "address" : "4406 State Route 43, Kent, Ohio, 44240",
       "phone" : "(330) 673-8555",
       "images" : "/hotels/hampton_inn.png",
-      "latitude" : 41.109449,
-      "longtitude" : -81.346798
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
     }
+
   },
 
   "events" : {
@@ -534,8 +353,8 @@
       "phone" : "(330) 678-9463",
       "time": "April 23, 18:00 - 20:30",
       "images" : "",
-      "latitude" : 41.153709,
-      "longtitude" : -81.356723
+      "latitude" : 41.153737,
+      "longtitude" : -81.356696
     },
     "beer_release": {
       "title" : "Its Raining Beer Release & Tasting",
@@ -544,8 +363,8 @@
       "phone" : "(330) 678-9463",
       "time": "April 24, 18:00 - 21:00",
       "images" : "",
-      "latitude" : 41.153709,
-      "longtitude" : -81.356733
+      "latitude" : 41.153737,
+      "longtitude" : -81.356696
     },
     "mama_festival": {
       "title" : "Who's Your Mama Festival",
