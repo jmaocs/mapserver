@@ -25,6 +25,10 @@ def map_topic(topic):
 def aboutus():
     return template(root_url + 'aboutus.tpl')
 
+@route('/interests', method='GET')
+def interests():
+    return template(root_url + 'interests.tpl')
+
 @route('/test')
 def test():
 	return template(root_url + 'test_image.tpl')
