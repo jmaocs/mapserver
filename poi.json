@@ -179,6 +179,16 @@
       "images" : "/sports/golf.png",
       "latitude" : 41.140079,
       "longtitude" : -81.314474
+    },
+    "basketball" : {
+      "title" : "Basketball",
+      "type"  : "sports",
+      "website" : "http://www.kentstatemensbasketballcamps.com",
+      "address" : "MAC Center Kent State University",
+      "phone" : "(330) 672-2495",
+      "images" : "/sports/basketball.png",
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
     }
     
   },
@@ -190,7 +200,7 @@
         "website" : "http://www.kent.edu/may4",
         "address" : "Taylor Hall, Kent OH 44240",
         "phone" : "unavailable",
-        "images" : "/ksu/visitor_center.png",
+        "images" : "/ksu/may4.png",
         "latitude" : 41.154204,
         "longtitude" : -81.357319
     },
