@@ -1,4 +1,5 @@
 {
+
   "downtown": {
       "wagon":{
         "title" : "Off The Wagon",
@@ -77,11 +78,6 @@
     }
   },
 
-
-
-
-
-
   "apartments": {
      "eagles_landing": {
       "title" : "Eagles Landing",
@@ -147,38 +143,6 @@
       "images" : "/sports/stadium.jpg",
       "latitude" : 41.140079,
       "longtitude" : -81.314474
-    },
-
-    "rec_center": {
-      "title" : "Recreational Services",
-      "type"  : "sports",
-      "website" : "http://www.kent.edu/recservices",
-      "address" : "1550 Ted Boyd Drive, Kent, Ohio 44242",
-      "phone" : "(330) 672-4732",
-      "images" : "/sports/rec_center.png",
-      "latitude" : 41.140079,
-      "longtitude" : -81.314474
-    }, 
-    "ice_arean": {
-      "title" : "Ice Arena",
-      "type"  : "sports",
-      "website" : "http://www.kent.edu/recservices/ice-arena",
-      "address" : "650 Loop Road, Kent, Ohio 44240",
-      "phone" : "(330) 672-7465",
-      "images" : "/sports/ice_arean.png",
-      "latitude" : 41.140079,
-      "longtitude" : -81.314474
-    }, 
-
-     "golf": {
-      "title" : "(Golf) Sunny Hill",
-      "type"  : "sports",
-      "website" : "http://www.sunnyhillgolfcourse.com/",
-      "address" : "3734 Sunny Brook Road, Kent, Ohio 44240",
-      "phone" : "(330) 673-1785",
-      "images" : "/sports/golf.png",
-      "latitude" : 41.140079,
-      "longtitude" : -81.314474
     }
     
   },
@@ -221,7 +185,7 @@
       "website" : "http://www.kent.edu/",
       "address" : "800 E Summit St Kent, OH 44240",
       "phone" : "unavailable",
-      "images" : "/ksu/stone.png",
+      "images" : "/ksu/stone.jpg",
       "latitude" : 41.146733,
       "longtitude" : -81.342439
     }
@@ -241,36 +205,5 @@
 
   },
 
-  "events" : {
-    "dinner_tasting": {
-      "title" : "Rum Tasting and Caribbean Dinner Tasting",
-      "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
-      "address" : "Secret Cellar, 176 East Main Street, Kent, OH 44240",
-      "phone" : "(330) 678-9463",
-      "time": "April 23, 18:00 - 20:30",
-      "images" : "",
-      "latitude" : 41.153737,
-      "longtitude" : -81.356696
-    },
-    "beer_release": {
-      "title" : "Its Raining Beer Release & Tasting",
-      "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
-      "address" : "Secret Cellar, 176 East Main Street, Kent, OH 44240",
-      "phone" : "(330) 678-9463",
-      "time": "April 24, 18:00 - 21:00",
-      "images" : "",
-      "latitude" : 41.153737,
-      "longtitude" : -81.356696
-    },
-    "mama_festival": {
-      "title" : "Who's Your Mama Festival",
-      "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
-      "address" : "Main Street Kent OH 44240",
-      "phone" : "unavailable",
-      "time": "",
-      "images" : "",
-      "latitude" : 41.153692,
-      "longtitude" : -81.339845
-    }
-  }
+  "events" : {}
 }
