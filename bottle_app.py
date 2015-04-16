@@ -33,5 +33,5 @@ def test():
 
 debug(True)
 #application = default_app()   # run on pythonanywhere
-run(reloader=True) 		# run local
+run(reloader=True,host='localhost', port=9999) 		# run local
 

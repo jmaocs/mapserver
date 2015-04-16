@@ -115,11 +115,16 @@
 
 
 		<!-- Recommendations List-->
-		<h3><b>Top Recommendations</b></h3>
-		<div style="height:10px; ;width:30%; background-color:black">&nbsp;</div>	
+
+		<h3 id="recom_title"><b>Top Recommendations</b></h3>
+		<div id="recom_line" style="height:10px; ;width:30%; background-color:black">&nbsp;</div>	
 		<div  id="list" style="width:30%;float:left; height:50%">
                 <table class="recommendation_table">
+                	% if topic is None:
+                		<link rel="stylesheet" href="/show_recom_title.css" />
+                	% end
                 	% if topic is not None:
+                		
 						% for each in topic:
 							% item = topic[each]
 							% sign_name= "/signs/" + item['type']+ ".png"

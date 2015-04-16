@@ -74,6 +74,17 @@
       "images" : "/restaurants/mexican_grill/mexican_grill.png",
       "latitude" : 41.152511,
       "longtitude" : -81.357542
+    },
+
+    "twist": {
+      "title" : "Twisted Meltz",
+      "type"  : "restaurants",
+      "website" : "http://www.twistedmeltz.com/",
+      "address" : "164 E Main St. Kent, OH 44240",
+      "phone" : "(330) 968-4104",
+      "images" : "/restaurants/twist.png",
+      "latitude" : 41.152511,
+      "longtitude" : -81.357542
     }
   },
 
@@ -238,6 +249,7 @@
   },
 
   "hotels": {
+    
     "kent_hotel": {
       "title" : "Kent Hotel and Conference Center",
       "type"  : "hotels",
@@ -245,6 +257,37 @@
       "address" : "215 S Depeyster St, Kent, Ohio 44240",
       "phone" : "(330) 346-0100",
       "images" : "/hotels/kent_hotel/kent_hotel.jpg",
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
+    }, 
+    "holiday_inn": {
+      "title" : "Holiday Inn Express",
+      "type"  : "hotels",
+      "website" : "http://www.hiexpress.com/hotels/us/en/kent/cakkn/hoteldetail",
+      "address" : "1215 Sanctuary View Dr, Kent, OH 44240",
+      "phone" : "(877-859-5095",
+      "images" : "/hotels/holiday_inn/holiday_inn.png",
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
+    }, 
+    "comfort_inn": {
+      "title" : "Comfort Inn & Suites",
+      "type"  : "hotels",
+      "website" : "http://www.comfortinn.com/hotel-kent-ohio-OH363?source=pmftripblaw&pmf=tripbl",
+      "address" : "4423 State Route 43, Kent, OH 44240",
+      "phone" : "(330) 673-1888",
+      "images" : "/hotels/comfort_inn/comfort_inn.png",
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
+    }, 
+    
+    "hampton_inn": {
+      "title" : "Hampton Inn Kent/Akron Area",
+      "type"  : "hotels",
+      "website" : "http://hamptoninn3.hilton.com/en/hotels/ohio/hampton-inn-kent-akron-area-CAKKTHX/index.html",
+      "address" : "4406 State Route 43, Kent, Ohio, 44240",
+      "phone" : "(330) 673-8555",
+      "images" : "/hotels/hampton_inn.png",
       "latitude" : 41.152553,
       "longtitude" : -81.356137
     }
