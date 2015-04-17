@@ -183,7 +183,7 @@
       "longtitude" : -81.359228
     },
     "guaca-Moles_mexican_grill": {
-      "title" : "Guaca-Moles Mexican Grill & Cantina",
+      "title" : "Guaca-Moles Mexican Grill",
       "type"  : "restaurants",
       "website" : "http://www.yelp.com/biz/guacamoles-kent",
       "address" : "1888 State Rt 59, Kent, OH 44240",
@@ -390,7 +390,7 @@
         "type"  : "ksu",
         "website" : "http://www.kent.edu/may4",
         "address" : "Taylor Hall, Kent OH 44240",
-        "phone" : "unavailable",
+        "phone" : "330-672-4660",
         "images" : "/ksu/may4.png",
         "latitude" : 41.150327,
         "longtitude" : -81.344002
@@ -401,7 +401,7 @@
         "type"  : "ksu",
         "website" : "http://www2.kent.edu/museum/about/index.cfm#_=_",
         "address" : "515 Hilltop Drive, Kent, OH",
-        "phone" : "unavailable",
+        "phone" : "330-672-3450 ",
         "images" : "/ksu/ksu_museum.png",
         "latitude" : 41.152895,
         "longtitude" : -81.349897
@@ -432,17 +432,17 @@
         "title" : "Math And Science Building",
         "type"  : "ksu",
         "website" : "http://www.kent.edu/math",
-        "address" : "233 MSB, 1300 Lefton Esplanade, Kent, Ohio 44242",
+        "address" : "Math and CS Building, Kent, OH 44242",
         "phone" : "330-672-2430",
         "images" : "/ksu/ksu_msb.jpg",
-        "latitude" : 41.144983, 
-        "longtitude" :-81.341682
+        "latitude" : 41.145086,
+        "longtitude" :-81.341567
       },
       "ksu_tri":{
         "title" : "Tri-Towers Rotunda",
         "type"  : "ksu",
         "website" : "https://www.kent.edu/dining/tri-towers-rotunda",
-        "address" : "17 Senhauser Drive – Beall Hall Second Floor, Kent, OH,44242",
+        "address" : "17 Senhauser Dr. Kent, OH,44242",
         "phone" : "330-672-2541",
         "images" : "/ksu/ksu_tri.png",
         "latitude" : 41.147152, 
@@ -452,7 +452,7 @@
         "title" : "Ceramics Lab",
         "type"  : "ksu",
         "website" : "https://www2.kent.edu/art/academics/crafts/ceramics/index.cfm",
-        "address" : "Ceramics Laboratory, Kent State University,Kent,OH,44240",
+        "address" : "Ceramics Lab, Kent State University",
         "phone" : "330-672-3000",
         "images" : "/ksu/ksu_lab.jpg",
         "latitude" : 41.147477,
