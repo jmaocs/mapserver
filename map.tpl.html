@@ -18,8 +18,8 @@
 		<!--js for left menu-->
 		
 		
-		<!--js and style for slide show-->
-		
+		<!--js and style for dropdown menu on map-->
+		<script type="text/javascript" src="/gdropdown.js"></script>
 		
 		<script src="/init.js"></script>
 
@@ -28,6 +28,7 @@
 			<link rel="stylesheet" href="/style.css" />
 		</noscript>
 			<link rel="stylesheet" href="/recommendation_table.css" />
+			<link rel="stylesheet" type="text/css" href="/gdropdown.css" />
 		
 		<!--[if lte IE 8]><link rel="stylesheet" href="/ie/v8.css" /><![endif]-->
 
@@ -130,10 +131,15 @@
 		<button id="trafficToggle">Traffic</button>
 		<button id="weatherToggle">Weather</button>
 		<div id="map"></div>
+		
 		<script type="text/javascript">
             var MapOption={
 			center:new google.maps.LatLng(41.1536111,-81.3580556),
 			zoom: 12,
+			mapTypeControl:true,
+		    mapTypeControlOptions: {
+		      style:google.maps.MapTypeControlStyle.DROPDOWN_MENU
+		    },
 			mapTypeId:google.maps.MapTypeId.TERRAIN,
 			mapTypeId:google.maps.MapTypeId.SATELLITE,
 			mapTypeId:google.maps.MapTypeId.HYBRID,
@@ -146,7 +152,146 @@
 			weatherLayer = new google.maps.weather.WeatherLayer({temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT});
             google.maps.event.addDomListener(document.getElementById('weatherToggle'), 'click', toggleweather);
 		    cloudLayer = new google.maps.weather.CloudLayer();
-  
+  			
+  			//create the check box items
+        var checkOptions = {
+        		gmap: map,
+        		title: "Traffic",
+        		id: "traffic",
+        		label: "Traffic",				
+        		action: function(){
+        			toggleTraffic();
+        		}        		        		
+        }
+        var check1 = new checkBox(checkOptions);
+        
+        var checkOptions2 = {
+        		gmap: map,
+        		title: "weather",
+        		id: "weather",
+        		label: "Weather",
+        		action: function(){
+        			toggleweather();
+        		}        		        		
+        }
+        var check2 = new checkBox(checkOptions2);
+
+        var checkOptions3 = {
+            gmap: map,
+            title: "downtown",
+            id: "downtown",
+            label: "Downtown",
+            action: function(){
+              {{option}} = "downtown";
+              console.log({{option}})
+              alert('you clicked check 2');
+              }
+            }                       
+        }
+        var check3 = new checkBox(checkOptions3);
+
+        var checkOptions4 = {
+            gmap: map,
+            title: "restaurants",
+            id: "restaurants",
+            label: "Restaurants",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check4 = new checkBox(checkOptions4);
+
+        var checkOptions4 = {
+            gmap: map,
+            title: "restaurants",
+            id: "restaurants",
+            label: "Restaurants",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check4 = new checkBox(checkOptions4);
+
+        var checkOptions5 = {
+            gmap: map,
+            title: "apartnments",
+            id: "apartnments",
+            label: "Apartnments",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check5 = new checkBox(checkOptions5);
+
+        var checkOptions6 = {
+            gmap: map,
+            title: "sports",
+            id: "sports",
+            label: "Sports",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check6 = new checkBox(checkOptions6);
+
+        var checkOptions7 = {
+            gmap: map,
+            title: "ksu",
+            id: "ksu",
+            label: "KSU",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check7 = new checkBox(checkOptions7);
+
+        var checkOptions8 = {
+            gmap: map,
+            title: "hotels",
+            id: "hotels",
+            label: "Hotels",
+            action: function(){
+              alert('you clicked check 2');
+            }                       
+        }
+        var check8 = new checkBox(checkOptions8);
+        //set options
+        // var divOptions = {
+        //     gmap: map,
+        //     name: 'Option1',
+        //     title: "This acts like a button or click event",
+        //     id: "mapOpt",
+        //     action: function(){
+        //       alert('option1');
+        //     }
+        // }
+        // var optionDiv1 = new optionDiv(divOptions);
+        
+        
+        
+        //create the input box items
+        
+        //possibly add a separator between controls        
+        var sep = new separator();
+        
+        //put them all together to create the drop down       
+        var ddDivOptions = {
+        	items: [sep, check1, check2,check3,check4,check5,check6,check7,check8],
+        	id: "myddOptsDiv"        		
+        }
+        //alert(ddDivOptions.items[1]);
+        var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
+                
+        var dropDownOptions = {
+        		gmap: map,
+        		name: 'Options',
+        		id: 'ddControl',
+        		title: '',
+        		position: google.maps.ControlPosition.TOP_RIGHT,
+        		dropDown: dropDownDiv 
+        }
+        
+        var dropDown1 = new dropDownControl(dropDownOptions);     
 			
 			function toggleTraffic(){
 				if(trafficLayer.getMap() == null){
@@ -251,7 +396,7 @@
 	
 		
 		<!-- Main End-->
-
+		
 
 	</body>
 	<script type="text/javascript">  
