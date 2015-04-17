@@ -51,7 +51,7 @@
 		  #left-menu{
 		  width:30%;
 		  float:left;	
-		  height:100%;
+		  height:500px;
 		  }
 	    </style>
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -91,23 +91,27 @@
 		
 			<div id="D1">
 						<form id="myform1" name="myform1">
+						<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
 						<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
 						</br>
-						<a href="#" id="1" onclick="myFunction1();" class="button1"/>GET DIRECTIONS</a>
-						<a href="#" onclick="codeAddress();" class="searchButton"/>SEARCH</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="#" id="1" onclick="myFunction1();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="codeAddress();" class="directionButton"/>Search</a>
 						</form>
 			</div>		
 			<div id="D2" style="display: none">
 						<form id="myform2" name="myform2">
-						<b><input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
-						</br></br>
-						<b><input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
-						</br></br>
-					
-						<a href="#" id="1" onclick="direction();" class="button1"/>GET DIRECTIONS</a>
-						<a href="#" onclick="myFunction2();" class="button2"/>SEARCH</a>
-						</br></br>
-						<div id="route-results" style="overflow-y: scroll; height:67%; margin:10px; text-align: left;"></div>
+						<img src="/scripts/B.png" style="width:20px;height:30px;padding-right:5px;float:left">
+						<input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
+						</br>
+						<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
+						<input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
+						</br>
+						&nbsp;&nbsp;&nbsp;
+						<a href="#" id="1" onclick="direction();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="myFunction2();" class="directionButton"/>Search</a>
+						</br>
+						<div id="route-results" style="overflow-y: scroll;height:295px;text-align:left;"></div>
 						</form>
 			</div>
 			<script>
