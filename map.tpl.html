@@ -128,10 +128,9 @@
 		</div>
 
 		<!-- Container for google map -->
-		<button id="trafficToggle">Traffic</button>
-		<button id="weatherToggle">Weather</button>
+		<input type="hidden" id="trafficToggle">
+		<input type="hidden" id="weatherToggle">
 		<div id="map"></div>
-		
 		<script type="text/javascript">
             var MapOption={
 			center:new google.maps.LatLng(41.1536111,-81.3580556),
@@ -182,10 +181,7 @@
             id: "downtown",
             label: "Downtown",
             action: function(){
-              {{option}} = "downtown";
-              console.log({{option}})
               alert('you clicked check 2');
-              }
             }                       
         }
         var check3 = new checkBox(checkOptions3);
@@ -396,7 +392,7 @@
 	
 		
 		<!-- Main End-->
-		
+
 
 	</body>
 	<script type="text/javascript">  
