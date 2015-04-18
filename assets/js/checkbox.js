@@ -48,7 +48,7 @@ function updateMap () {
 			    null, /* size is determined at runtime */
 			    null, /* origin is 0,0 */
 			    null, /* anchor is bottom center of the scaled image */
-			    new google.maps.Size(32, 32)
+			    new google.maps.Size(28, 28)
 			); 
 
 		    var temp_marker = [];
