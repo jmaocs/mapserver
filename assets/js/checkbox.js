@@ -1,4 +1,5 @@
 var selected_poi = {};
+var markersOnMap = {};
 
 Object.size = function(obj) {
     var size = 0, key;
@@ -12,11 +13,25 @@ function getChecked(key, data)
 {
 	if(key in selected_poi){
 		delete selected_poi[key];
-	}else{		
+		removeMakersByKey(key);
+	} else {		
 		selected_poi[key] = data[key];
 	}
 	updateRecomTableAndSlider();
 	updateMap();
+}
+
+function removeMakersByKey(key) {
+	for (var k in markersOnMap) {
+		if (k == key) {
+			for (var i = 0; i < markersOnMap[k].value.length; i++) {
+				markersOnMap[k].value[i].setMap(null);
+			}	
+			delete markersOnMap[key];
+		}
+	}
+	console.log("Makers with key: " + key + " removed from map");
+
 }
 
 function updateMap () {
@@ -55,6 +70,7 @@ function updateMap () {
 		    temp_marker.push(lat);
 		    temp_marker.push(lnt);
 		    temp_marker.push(pinIcon);
+		    temp_marker.push(key);
 		    infoWindows.push(contentString);
 		    markers.push(temp_marker);
 		}
@@ -74,6 +90,15 @@ function updateMap () {
                 infoWindow.open(map, marker);
             }
         })(marker, i));
+        var key = markers[i][3];
+        if (key in markersOnMap) {
+        	markersOnMap[key].value.push(marker);
+        } else {
+        	markersOnMap[key] = {
+        		value:[]
+        	}
+        	markersOnMap[key].value.push(marker);
+		}
 	}
 }
 
