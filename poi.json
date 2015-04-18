@@ -218,7 +218,7 @@
     "square_deli": {
       "title" : "Franklin Square Deli ",
       "type"  : "restaurants",
-      "website" : "www.franklinsquaredeli.com",
+      "website" : "http://www.franklinsquaredeli.com",
       "address" : "Main St, Kent, OH 44240",
       "phone" : "(330) 677-2326",
       "images" : "/restaurants/square_deli.png",
@@ -229,7 +229,7 @@
     "laziza": {
       "title" : "Laziza",
       "type"  : "restaurants",
-      "website" : " www.yourlaziza.com",
+      "website" : "http://www.yourlaziza.com",
       "address" : "195 East Erie, Kent, OH",
       "phone" : "(330) 677-7000",
       "images" : "/restaurants/laziza.png",
@@ -240,7 +240,7 @@
      "wild_papaya": {
       "title" : "Wild Papaya",
       "type"  : "restaurants",
-      "website" : " www.wildpapayaohio.com",
+      "website" : "http://www.wildpapayaohio.com",
       "address" : "1665 E Main St, Suite 100C, Kent, OH",
       "phone" : "(330) 677-0916",
       "images" : "/restaurants/wild_papaya.png",
