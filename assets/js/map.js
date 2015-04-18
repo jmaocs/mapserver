@@ -185,6 +185,7 @@ function codeAddress() {
 					};
 					marker=new google.maps.Marker(MarkerOption);
 					marker.setMap(map);
+                    map.setCenter({lat: latitude, lng: longitude});
 					//Add Information Window
 					var InfoOption={content:"Here is Kent State University"}
 					var infoWindow=new google.maps.InfoWindow(InfoOption);
@@ -250,6 +251,7 @@ function codeAddress() {
 					//traffic layer is disabled.. enable it
 					weatherLayer.setMap(map);
 					cloudLayer.setMap(map);
+                    map.setZoom(12);
 				} else {
 					//traffic layer is enabled.. disable it
 					weatherLayer.setMap(null);  

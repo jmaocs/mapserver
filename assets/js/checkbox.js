@@ -100,6 +100,7 @@ function updateMap () {
         	markersOnMap[key].value.push(marker);
 		}
 	}
+	map.setZoom(13);
 }
 
 function updateRecomTableAndSlider () {
