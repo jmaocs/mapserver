@@ -246,7 +246,88 @@
       "images" : "/restaurants/wild_papaya.png",
       "latitude" : 41.156001,
       "longtitude" : -81.333657
+    }, 
+    "hugry_howie": {
+      "title" : "Hungry Howie's",
+      "type"  : "restaurants",
+      "website" : "http://www.hungryhowies.com/store/hungry-howies-829",
+      "address" : "1444 E Main Kent, OH",
+      "phone" : "(330) 677-5555",
+      "images" : "/restaurants/hugry_howie.png",
+      "latitude" : 41.153757,
+      "longtitude" : -81.336294
+    }, 
+     "taco_bell": {
+      "title" : "Taco Bell",
+      "type"  : "restaurants",
+      "website" : "http://www.tacobell.com/",
+      "address" : "911 E Main St Kent, OH 44240",
+      "phone" : "(330) 677-5555",
+      "images" : "/restaurants/taco_bell.png",
+      "latitude" : 41.154015,
+      "longtitude" : -81.347323
+    }, 
+     "subway": {
+      "title" : "Subway",
+      "type"  : "restaurants",
+      "website" : "http://www.subway.com/subwayroot/default.aspx?rdr=Banners:GooglePlaces:SubwayCom/",
+      "address" : "1709 E Main St Kent, OH 44240",
+      "phone" : "(330) 677-5555",
+      "images" : "/restaurants/subway.png",
+      "latitude" : 41.156259,
+      "longtitude" : -81.332155
+    }, 
+     "pizza_hut": {
+      "title" : "Pizza Hut",
+      "type"  : "restaurants",
+      "website" : "https://order.pizzahut.com/home",
+      "address" : "1715 OH-59 Kent, OH 44240",
+      "phone" : "(330) 677-5555",
+      "images" : "/restaurants/pizza_hut.jpg",
+      "latitude" : 41.154740,
+      "longtitude" : -81.331146
+    }, 
+    "ming_cheng": {
+      "title" : "Ming Cheng Restaurant",
+      "type"  : "restaurants",
+      "website" : "http://www.urbanspoon.com/cities/16-cleveland/restaurants/1471441-ming-cheng/menu",
+      "address" : "1687 E Main St Kent, OH 44240",
+      "phone" : "(330) 678-1600",
+      "images" : "/restaurants/ming_cheng.jpg",
+      "latitude" : 41.154740,
+      "longtitude" : -81.331146
+    },
+    "china_city": {
+      "title" : "China City Restaurant",
+      "type"  : "restaurants",
+      "website" : "http://www.allmenus.com/oh/kent/18771-china-city/menu/",
+      "address" : "156 Cherry St, Kent OH 44240",
+      "phone" : "(330) 673-6566",
+      "images" : "/restaurants/china_city.png",
+      "latitude" : 41.141374,
+      "longtitude" : -81.359843
+    },
+    "belleria_pizza": {
+      "title" : "Belleria Pizza and Italian",
+      "type"  : "restaurants",
+      "website" : "http://www.belleriapizza.net/",
+      "address" : "135 E Erie St, Kent OH 44240",
+      "phone" : "(330) 673-6566",
+      "images" : "/restaurants/belleria_pizza.jpg",
+      "latitude" : 41.155564,
+      "longtitude" : -81.326061
+    },
+    "hudson_village": {
+      "title" : "Hudson Village Pizza",
+      "type"  : "restaurants",
+      "website" : "http://www.vpifundraising.com/index.php?option=com_user&view=login&return=aHR0cDovL3d3dy52cGlmdW5kcmFpc2luZy5jb20v",
+      "address" : "2108 E. Main, Kent OH 44240",
+      "phone" : "(330) 673-6566",
+      "images" : "/restaurants/hudson_village.jpg",
+      "latitude" : 41.155063,
+      "longtitude" : -81.317456
     }
+
 
   },
 
@@ -302,6 +383,96 @@
       "images" : "/apartments/campus_pointe.png",
       "latitude" : 41.156680,
       "longtitude" : -81.328436
+    },
+    "sutton_crossings": {
+      "title" : "Sutton Crossings Apartments",
+      "type"  : "apartments",
+      "website" : "http://www.apartmentguide.com/apartments/Ohio/Kent/Sutton-Crossings-Apartments/79307/",
+      "address" : "3814 Cascades Boulevard, Kent, OH 44240",
+      "phone" : "(330) 818-9387",
+      "images" : "/apartments/sutton_crossings.jpg",
+      "latitude" : 41.095182,
+      "longtitude" : -81.387294
+    },
+  "pinewood": {
+      "title" : "Pinewood Apartments",
+      "type"  : "apartments",
+      "website" : "http://www.apartmentguide.com/apartments/Ohio/Kent/Pinewood-Apartments/15706/",
+      "address" : "1200 Spruce Court, Kent, OH 44240",
+      "phone" : "(330) 931-4211",
+      "images" : "/apartments/pinewood.jpg",
+      "latitude" : 41.161306,
+      "longtitude" : -81.386218
+    },
+  "pebblebrook": {
+      "title" : "Pebblebrook Apartments",
+      "type"  : "apartments",
+      "website" :"http://www.apartmentguide.com/apartments/Ohio/Kent/Pebblebrook-Apartments/78972/",
+      "address" : "6115 Pebblebrook Lane, Kent, OH 44240",
+      "phone" : "(330) 818-9384",
+      "images" : "/apartments/pebblebrook.jpg",
+      "latitude" : 41.153667,
+      "longtitude" : -81.357886
+    },
+  "landmark": {
+      "title" : "The Landmark",
+      "type"  : "apartments",
+      "website" :"http://www.apartmentguide.com/apartments/Ohio/Kent/The-Landmark/100023999/",
+      "address" : "210 S Depeyster Street, Kent, OH 44240",
+      "phone" : "(330) 474-6461",
+      "images" : "/apartments/landmark.jpg",
+      "latitude" : 41.152611,
+      "longtitude" : -81.356419
+    },
+  "dartmouth": {
+      "title" : "Dartmouth Place",
+      "type"  : "apartments",
+      "website" :"http://www.dartmouthplacebyelon.com/",
+      "address" : "705 S Lincoln St, Kent, OH 44240",
+      "phone" : "(330) 474-1615",
+      "images" : "/apartments/dartmouth.jpg",
+      "latitude" : 41.146566,
+      "longtitude" : -81.351377
+    },
+    "riverview": {
+      "title" : "Riverview Apartments",
+      "type"  : "apartments",
+      "website" :"http://kentriverview.com/",
+      "address" : "250 River St Kent, OH 44240",
+      "phone" : "330-990-4019",
+      "images" : "/apartments/riverview.jpeg",
+      "latitude" : 41.151931,
+      "longtitude" : -81.362343
+    },
+     "buckeye_parks": {
+      "title" : "Buckeye Parks Management",
+      "type"  : "apartments",
+      "website" :"http://www.buckeyeparksmgmt.com/",
+      "address" : "202 E Summit St Kent, OH 44240",
+      "phone" : "(330) 678-3047",
+      "images" : "/apartments/buckeye_parks.png",
+      "latitude" : 41.149830 ,
+      "longtitude" : -81.356163
+    },
+    "safehouse": {
+      "title" : "Safehouse Rentals",
+      "type"  : "apartments",
+      "website" :"http://kentrentals.com/",
+      "address" : "114 Brady St Kent, OH 44240",
+      "phone" : "440-346-3493",
+      "images" : "/apartments/safehouse.png",
+      "latitude" : 41.156875,
+      "longtitude" : -81.357558
+    },
+    "kent_suits": {
+      "title" : "Kent Suits",
+      "type"  : "apartments",
+      "website" :"http://www.kentsuites.com/",
+      "address" : "223 N Water St Kent, OH 44240",
+      "phone" : "440-346-3493",
+      "images" : "/apartments/safehouse.png",
+      "latitude" : 41.155356,
+      "longtitude" : -81.357859
     }
     
   },
@@ -523,6 +694,37 @@
       "images" : "/hotels/hampton_inn.png",
       "latitude" : 41.109449,
       "longtitude" : -81.346798
+    },
+    "econo_lodge": {
+      "title" : "Econo Lodge",
+      "type"  : "hotels",
+      "website" : "http://www.econolodge.com/bestrate/kent-ohio-hotels?source=pmfgoell&brand-code=EL&pmf=google&k_clickid=27a61611-0836-62c9-22ab-000072d59b5c&chain=E",
+      "address" : "4386 State Route 43 Kent, OH 44240",
+      "phone" : "(855) 849-1513",
+      "images" : "/hotels/econo_lodge.jpg",
+      "latitude" : 41.109301,
+      "longtitude" : -81.347182
+    },
+
+    "days_inn": {
+      "title" : "Days Inn Kent-Akron",
+      "type"  : "hotels",
+      "website" : "http://www.choosearoom.com/hotel2/?hotel_id=700202612&TID=seOnAeVbR|dc&pcrid=40508229074&utm_source=google&utm_medium=cpc&utm_term=days%20inn%20kent%20akron&utm_campaign=Craig+-+Hotel+Chain+D&keyword=days%20inn%20kent%20akron&gclid=CJWA6e3h_cQCFQqEaQodNmIAuA",
+      "address" : "4422 Edson Road, I-76 & State Route 43, Kent, OH 44240-6938",
+      "phone" : "(800) 329-1992",
+      "images" : "/hotels/days_inn.jpg",
+      "latitude" : 41.108614,
+      "longtitude" : -81.347197
+    },
+  "super8": {
+      "title" : "Super 8 Kent/Akron Area",
+      "type"  : "hotels",
+      "website" : "http://www.super8.com/hotels/ohio/kent/super-8-kent-akron-area/hotel-overview?hotel_id=03335&cid=whg_s8_ggl_br&wid=ps:br_whg&002=2191774&004=5624112410&005=31787736219&006=22192053290&007=Search&008=&025=c&026=",
+      "address" : "4380 Edson Road, Kent, OH 44240",
+      "phone" : "(800) 536-1211",
+      "images" : "/hotels/super8.jpg",
+      "latitude" : 41.153667,
+      "longtitude" : -81.357886
     }
   },
 
