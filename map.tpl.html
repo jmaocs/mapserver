@@ -31,8 +31,9 @@
 			<link rel="stylesheet" href="/skel.css" />
 			<link rel="stylesheet" href="/style.css" />
 		</noscript>
-			<link rel="stylesheet" href="/recommendation_table.css" />
-			<link rel="stylesheet" type="text/css" href="/gdropdown.css" />
+
+		<link rel="stylesheet" href="/recommendation_table.css" />
+		<link rel="stylesheet" type="text/css" href="/gdropdown.css" />
 		
 		<!--[if lte IE 8]><link rel="stylesheet" href="/ie/v8.css" /><![endif]-->
 
@@ -63,9 +64,10 @@
 	</head>
 
 	<script type="text/javascript">
-		var poi = {{!poi}};
+		var poi = {{!poi}};		// set global variable
+		var type = "apartments";
 	</script>
-	<body class="right-sidebar" onload="init(poi)" >
+	<body class="right-sidebar" onload="init(poi, type)" >
 
 		<!-- Header -->
 			<div id="header-wrapper" style="height:100%">
@@ -93,22 +95,22 @@
 
 		
 			<div id="D1">
-						<form id="myform1" name="myform1">
-						<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
-						<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
-						</br>
-						&nbsp;&nbsp;&nbsp;
-						<a href="#" id="1" onclick="myFunction1();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#" onclick="codeAddress();" class="directionButton"/>Search</a>
-						</form>
+				<form id="myform1" name="myform1">
+				<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
+				<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
+				</br>
+				&nbsp;&nbsp;&nbsp;
+				<a href="#" id="1" onclick="myFunction1();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#" onclick="codeAdress()" class="directionButton"/>Search</a>
+				</form>
 			</div>		
 			<div id="D2" style="display: none">
 						<form id="myform2" name="myform2">
 						<img src="/scripts/B.png" style="width:20px;height:30px;padding-right:5px;float:left">
-						<input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="address1" type="text" size="6" ></b>
+						<input class="searchbox1" style="text-align: left;width:90%;height:50px;" id="source" type="text" size="6" ></b>
 						</br>
 						<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
-						<input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="address2" type="text" size="6" ></b>
+						<input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="destination" type="text" size="6" ></b>
 						</br>
 						&nbsp;&nbsp;&nbsp;
 						<a href="#" id="1" onclick="direction();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -117,7 +119,6 @@
 						<div id="route-results" style="overflow-y: scroll;height:295px;text-align:left;"></div>
 						</form>
 			</div>
-	
 		</div>
 
 		<!-- Container for google map -->

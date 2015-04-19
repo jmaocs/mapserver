@@ -2,8 +2,9 @@ var map;
 var directionsService = new google.maps.DirectionsService();
 var directionsDisplay = new google.maps.DirectionsRenderer();
 var marker;
+var lastMarkerBySearch = null;
 
-function init(poi)
+function init(poi, type)
 {
 	var MapOption={
 			center:new google.maps.LatLng(41.1536111,-81.3580556),
@@ -142,7 +143,7 @@ function init(poi)
                 
         var dropDownOptions = {
         		gmap: map,
-        		name: 'Options',
+        		name: 'Categories',
         		id: 'ddControl',
         		title: '',
         		position: google.maps.ControlPosition.TOP_RIGHT,
@@ -158,103 +159,129 @@ function init(poi)
 		google.maps.event.addListener(autocomplete, 'place_changed', function() {
 	        var place = autocomplete.getPlace();
 		});
-					    var autocomplete = new google.maps.places.Autocomplete($("#address1")[0], {});
-		            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-		                var place = autocomplete.getPlace();
-		            });
-					    var autocomplete = new google.maps.places.Autocomplete($("#address2")[0], {});
-		            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-		                var place = autocomplete.getPlace();
-		            });
+		
+		var autocomplete = new google.maps.places.Autocomplete($("#source")[0], {});
+		google.maps.event.addListener(autocomplete, 'place_changed', function() {
+		    var place = autocomplete.getPlace();
+		});
+		var autocomplete = new google.maps.places.Autocomplete($("#destination")[0], {});
+		google.maps.event.addListener(autocomplete, 'place_changed', function() {
+		    var place = autocomplete.getPlace();
+		});
 
-	// document.getElementById(type).click();
-
+		//Enter Key Event Listener
+		document.querySelector('#address').addEventListener('keypress', function (e) {
+		    var key = e.which || e.keyCode;
+		    if (key === 13) { // 13 is enter
+		      	e.preventDefault();
+		      	if(document.getElementById("address").value != ""){
+		      		codeAdress();
+		      	}
+		    }
+		});
+		document.querySelector('#destination').addEventListener('keypress', function (e) {
+		    var key = e.which || e.keyCode;
+		    if (key === 13) { // 13 is enter
+		      	e.preventDefault();
+		      	if(document.getElementById("source").value != "" || document.getElementById("destination").value != ""){
+		      		direction();
+		      	}
+		    }
+		});
+	if (type != null) {
+		getChecked(type, poi);
+		console.log(type);
+	}
 }
 
-function codeAddress() {
-	        var geocoder = new google.maps.Geocoder();
-            var address = document.getElementById("address").value;
-            geocoder.geocode({ 'address': address }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    var latitude = results[0].geometry.location.lat();
-                    var longitude = results[0].geometry.location.lng();
-					var MarkerOption=
-					{
-					position:new google.maps.LatLng(latitude,longitude),
-                    animation: google.maps.Animation.DROP
-					};
-					marker=new google.maps.Marker(MarkerOption);
-					marker.setMap(map);
-                    map.setCenter({lat: latitude, lng: longitude});
-					//Add Information Window
-					var InfoOption={content:"Here is Kent State University"}
-					var infoWindow=new google.maps.InfoWindow(InfoOption);
-					google.maps.event.addListener(marker,'click',function(e){
-					infoWindow.open(map, marker);
-					});
-                } else {
-                    alert("Request failed.")
-                }
-            });	
-	}
-	function direction() {
-		    document.getElementById("route-results").innerHTML = "";
-			directionsDisplay.setMap(map);
-			directionsDisplay.setPanel(document.getElementById('route-results'));
-		    var start = document.getElementById("address1").value;
-			var end = document.getElementById("address2").value; 
-			  var request = {
-				origin:start,
-				destination:end,
-				travelMode: google.maps.TravelMode.DRIVING
-			  };
-			  directionsService.route(request, function(result, status) {
-				if (status == google.maps.DirectionsStatus.OK) {
-				  directionsDisplay.setDirections(result);
-				}
-			  });
-			  
-	}
-	function myFunction1() {
-     document.getElementById('D1').style.display = "none";
+function codeAdress(){
+	var geocoder = new google.maps.Geocoder();
+    var address = document.getElementById("address").value;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+	    if (status == google.maps.GeocoderStatus.OK) {
+	        var latitude = results[0].geometry.location.lat();
+	        var longitude = results[0].geometry.location.lng();
+			var MarkerOption=
+			{
+				position:new google.maps.LatLng(latitude,longitude),
+	            animation: google.maps.Animation.DROP
+			};
+			marker = new google.maps.Marker(MarkerOption);
+			marker.setMap(map);
+	        map.setCenter({lat: latitude, lng: longitude});
+			//Add Information Window
+			var InfoOption={content:"Here is Kent State University"}
+			var infoWindow=new google.maps.InfoWindow(InfoOption);
+			google.maps.event.addListener(marker,'click',function(e){
+				infoWindow.open(map, marker);
+			});
+			if (lastMarkerBySearch != null) {
+				lastMarkerBySearch.setMap(null);
+			}
+			lastMarkerBySearch = marker;
+	    } else {
+	        alert("Please enter a place to search");
+	    }
+    });	
+}
+function direction() {
+    document.getElementById("route-results").innerHTML = "";
+	directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById('route-results'));
+    var start = document.getElementById("source").value;
+	var end = document.getElementById("destination").value; 
+	var request = {
+		origin:start,
+		destination:end,
+		travelMode: google.maps.TravelMode.DRIVING
+	};
+	directionsService.route(request, function(result, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+  	  		directionsDisplay.setDirections(result);
+		}
+	});	  
+}
+function myFunction1() {
+	 document.getElementById('D1').style.display = "none";
 	 document.getElementById('D2').style.display = "block";
 	 document.getElementById("myform2").reset();
-	 document.getElementById("address1").focus();
+	 //document.getElementById("address1").focus();
 	 document.getElementById("route-results").innerHTML = "";
 	 clean();
-	}
-	function myFunction2() {
-     document.getElementById('D2').style.display = "none";
+}
+function myFunction2() {
+	 document.getElementById('D2').style.display = "none";
 	 document.getElementById('D1').style.display = "block";
 	 document.getElementById("myform1").reset();
-	 document.getElementById("address").focus();
+	 //document.getElementById("address").focus();
 	 clean();
-	}
-	function clean(){
+}
+
+function clean(){
 	directionsDisplay.setMap(null);
 	directionsDisplay.setPanel(null);
 	marker.setMap(null);
-	}
+}
 
-	function toggleTraffic(){
-				if(trafficLayer.getMap() == null){
-					//traffic layer is disabled.. enable it
-					trafficLayer.setMap(map);
-				} else {
-					//traffic layer is enabled.. disable it
-					trafficLayer.setMap(null);             
-				}
-			}
+function toggleTraffic(){
+	if(trafficLayer.getMap() == null){
+		//traffic layer is disabled.. enable it
+		trafficLayer.setMap(map);
+	} else {
+		//traffic layer is enabled.. disable it
+		trafficLayer.setMap(null);             
+	}
+}
 			
-			function toggleweather(){
-				if(weatherLayer.getMap() == null){
-					//traffic layer is disabled.. enable it
-					weatherLayer.setMap(map);
-					cloudLayer.setMap(map);
-                    map.setZoom(12);
-				} else {
-					//traffic layer is enabled.. disable it
-					weatherLayer.setMap(null);  
-					cloudLayer.setMap(null);
-				}
-			}
+function toggleweather(){
+	if(weatherLayer.getMap() == null){
+		//traffic layer is disabled.. enable it
+		weatherLayer.setMap(map);
+		cloudLayer.setMap(map);
+        map.setZoom(12);
+	} else {
+		//traffic layer is enabled.. disable it
+		weatherLayer.setMap(null);  
+		cloudLayer.setMap(null);
+	}
+}

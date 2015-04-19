@@ -1,0 +1,66 @@
+{
+  	"downtown_gallery":{
+        "title" : "Downtown Gallery",
+        "type"  : "downtown",
+        "website" : "http://art.kent.edu/galleries/secondary/downtown/downtown.html",
+        "address" : "141 E. Main St, Kent OH 44240",
+        "phone" : "(330) 667-1549",
+        "images" : "/downtown/downtown_gallery.png",
+        "latitude" : 41.154204,
+        "longtitude" : -81.357319
+     },
+
+    "rays_place": {
+      "title" : "Ray's Place",
+      "type"  : "restaurants",
+      "website" : "http://www.raysplacekent.com/",
+      "address" : "135 Franklin Ave, Kent, OH 44240",
+      "phone" : "(330) 673-2233",
+      "images" : "/restaurants/rays_place/rays_place.png",
+      "latitude" : 41.153149,
+      "longtitude" : -81.358702
+    },
+
+   "eagles_landing": {
+      "title" : "Eagles Landing",
+      "type"  : "apartments",
+      "website" : "http://www.kentapartments.com/",
+      "address" : "609 S Lincoln St,Unit F,Kent,Ohio 44240",
+      "phone" : "(330) 673-8300",
+      "images" : "/apartments/eagles_landing.png",
+      "latitude" : 41.147452,
+      "longtitude" : -81.350572
+    },
+
+    "stadium": {
+      "title" : "Dix Stadium",
+      "type"  : "sports",
+      "website" : "http://www.kent.edu/tags/dix-stadium",
+      "address" : " 2213 Summit Rd, Kent, OH 44242",
+      "phone" : "(330) 672-2078",
+      "images" : "/sports/stadium.jpg",
+      "latitude" : 41.140079,
+      "longtitude" : -81.314474
+   },
+    "visitor_center":{
+        "title" : "May 4th Visitor Center",
+        "type"  : "ksu",
+        "website" : "http://www.kent.edu/may4",
+        "address" : "Taylor Hall, Kent OH 44240",
+        "phone" : "330-672-4660",
+        "images" : "/ksu/may4.png",
+        "latitude" : 41.150327,
+        "longtitude" : -81.344002
+    },
+    
+    "kent_hotel": {
+      "title" : "Kent Hotel and Conference Center",
+      "type"  : "hotels",
+      "website" : "http://www.kentstatehotel.com/",
+      "address" : "215 S Depeyster St, Kent, Ohio 44240",
+      "phone" : "(330) 346-0100",
+      "images" : "/hotels/kent_hotel/kent_hotel.jpg",
+      "latitude" : 41.152553,
+      "longtitude" : -81.356137
+    }
+}

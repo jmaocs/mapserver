@@ -6,6 +6,7 @@ from bottle import route, run, debug, template, request, static_file, error, get
 root_url = './'
 
 poi = json.load(open(root_url + 'poi.json'))
+top_recom = json.load(open(root_url + 'top_recom.json'))
 
 
 @route('/', method='GET')
@@ -15,12 +16,12 @@ def index():
 @route('/map', method='GET')
 def map():
 	tmp = json.dumps(poi)
-	return template(root_url + 'map.tpl', topic = None, poi = tmp)
+	return template(root_url + 'map.tpl', topic = top_recom, poi = tmp)
 
 @route('/map/:topic', method='GET')
 def map_topic(topic):
 	tmp = json.dumps(poi)
-	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, key_type = "downtown")
+	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, topic_type = "downtown")
 
 
 @route('/aboutus', method='GET')
@@ -39,5 +40,5 @@ def test():
 
 debug(True)
 #application = default_app()   # run on pythonanywhere
-run(reloader=True,host='localhost', port=9999) 		# run local
+run(reloader=True,host='localhost', port=8080) 		# run local
 
