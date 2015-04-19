@@ -16,12 +16,13 @@ def index():
 @route('/map', method='GET')
 def map():
 	tmp = json.dumps(poi)
-	return template(root_url + 'map.tpl', topic = top_recom, poi = tmp)
+	return template(root_url + 'map.tpl', topic = top_recom, poi = tmp, topic_type = None)
 
 @route('/map/:topic', method='GET')
 def map_topic(topic):
 	tmp = json.dumps(poi)
-	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, topic_type = "downtown")
+	print(topic)
+	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, topic_type = topic)
 
 
 @route('/aboutus', method='GET')

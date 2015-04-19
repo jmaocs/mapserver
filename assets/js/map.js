@@ -190,7 +190,6 @@ function init(poi, type)
 		});
 	if (type != null) {
 		getChecked(type, poi);
-		console.log(type);
 	}
 }
 

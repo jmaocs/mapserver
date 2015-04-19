@@ -76,13 +76,19 @@ function updateMap () {
 		}
 	}
 	var infoWindow = new google.maps.InfoWindow(),marker,i;
+	var minLat = 100, minLnt = 100, maxLat = 0, maxLnt = -100;
 	for(i = 0; i < markers.length; i++){
+		minLat = Math.min(minLat, markers[i][0]);
+		maxLat = Math.max(maxLat, markers[i][0]);
+		minLnt = Math.min(minLnt, markers[i][1]);
+		maxLnt = Math.max(maxLnt, markers[i][1]);
 		var myLatLng = new google.maps.LatLng(markers[i][0], markers[i][1]);
 		marker = new google.maps.Marker({
 			  position: myLatLng,
 			  map: map,
 			  icon: markers[i][2]
 		});
+		
 		// Allow each marker to have an info window    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
@@ -100,7 +106,14 @@ function updateMap () {
         	markersOnMap[key].value.push(marker);
 		}
 	}
-	map.setZoom(13);
+	// if (minLat != 100) {
+	// 	var centerLat = (minLat+maxLat)/2;
+	// 	var centerLnt = (minLnt+maxLnt)/2;
+	// 	console.log(centerLat);
+	// 	console.log(centerLnt);
+	// 	map.setCenter({lat: centerLat, lng: centerLnt});
+	// }
+	map.setZoom(14);
 }
 
 function updateRecomTableAndSlider () {
