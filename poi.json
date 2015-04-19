@@ -226,6 +226,17 @@
       "longtitude" : -81.358493
     },
 
+    "china_city": {
+      "title" : "China City Restaurant",
+      "type"  : "restaurants",
+      "website" : "http://www.allmenus.com/oh/kent/18771-china-city/menu/",
+      "address" : "156 Cherry St, Kent OH 44240",
+      "phone" : "(330) 673-6566",
+      "images" : "/restaurants/china_city.png",
+      "latitude" : 41.141374,
+      "longtitude" : -81.359843
+    },
+
     "laziza": {
       "title" : "Laziza",
       "type"  : "restaurants",
@@ -297,16 +308,7 @@
       "latitude" : 41.154740,
       "longtitude" : -81.331146
     },
-    "china_city": {
-      "title" : "China City Restaurant",
-      "type"  : "restaurants",
-      "website" : "http://www.allmenus.com/oh/kent/18771-china-city/menu/",
-      "address" : "156 Cherry St, Kent OH 44240",
-      "phone" : "(330) 673-6566",
-      "images" : "/restaurants/china_city.png",
-      "latitude" : 41.141374,
-      "longtitude" : -81.359843
-    },
+    
     "belleria_pizza": {
       "title" : "Belleria Pizza and Italian",
       "type"  : "restaurants",

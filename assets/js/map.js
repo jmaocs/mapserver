@@ -138,6 +138,7 @@ function init(poi, type)
         	items: [sep, check1, check2,check3,check4,check5,check6,check7,check8],
         	id: "myddOptsDiv"        		
         }
+
         //alert(ddDivOptions.items[1]);
         var dropDownDiv = new dropDownOptionsDiv(ddDivOptions);               
                 
@@ -189,7 +190,11 @@ function init(poi, type)
 		    }
 		});
 	if (type != null) {
-		getChecked(type, poi);
+		setTimeout( function(){
+			console.log("ready to click");
+			document.getElementById(type).click();
+			document.getElementById('myddOptsDiv').style.display = 'none';
+		}, 100);
 	}
 }
 
