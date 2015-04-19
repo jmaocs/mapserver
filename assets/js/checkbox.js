@@ -113,6 +113,7 @@ function updateMap () {
 	// 	console.log(centerLnt);
 	// 	map.setCenter({lat: centerLat, lng: centerLnt});
 	// }
+	map.setCenter({lat: 41.147169, lng: -81.348025});
 	map.setZoom(14);
 }
 
