@@ -12,6 +12,7 @@
 		<meta name="keywords" content="" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=weather,places&language=en-AU"></script>
+	 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="/jquery.min.js"></script>
 		<script src="/jquery.dropotron.min.js"></script>
 		<script src="/skel.min.js"></script>
@@ -65,10 +66,11 @@
 
 	<script type="text/javascript">
 		var poi = {{!poi}};		// set global variable
+		var top_recom = {{!top_recom}}
 	    var type = "{{!topic_type}}";
 		//var type = "downtown";
 	</script>
-	<body class="right-sidebar" onload="init(poi, type)" >
+	<body class="right-sidebar" onload="init(poi, type, top_recom)" >
 
 		<!-- Header -->
 			<div id="header-wrapper" style="height:100%">
@@ -101,8 +103,8 @@
 				<input class="searchbox" style="text-align: left;width:90%;height:50px;" id="address" type="text" size="6" autofocus ></b>
 				</br>
 				&nbsp;&nbsp;&nbsp;
-				<a href="#" id="1" onclick="myFunction1();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="#" onclick="codeAdress()" class="directionButton"/>Search</a>
+				<a href="#" id="1" onclick="expandTwoSearchBox();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#" onclick="searchTarget()" class="directionButton"/>Search</a>
 				</form>
 			</div>		
 			<div id="D2" style="display: none">
@@ -114,8 +116,8 @@
 						<input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="destination" type="text" size="6" ></b>
 						</br>
 						&nbsp;&nbsp;&nbsp;
-						<a href="#" id="1" onclick="direction();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#" onclick="myFunction2();" class="directionButton"/>Search</a>
+						<a href="#" id="1" onclick="getDirection();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="shrinkTwoSearchBox();" class="directionButton"/>Search</a>
 						</br>
 						<div id="route-results" style="overflow-y: scroll;height:295px;text-align:left;"></div>
 						</form>
@@ -156,12 +158,13 @@
 							 <tr class="recommendation_tr" style="height:100px">
 			                       <td style="width:25%;height:100px" class="recommendation_td">
 			                           <img name="recom_img" src={{left_img}} class="recommendation_img" style="width:100%;height:80px;" ></img>
+			                           <a name="recom_direction" id ="direct_recom" href="#" value = '{{item["address"]}}'> Direction To</a>
 			                       </td>
 			                       <td style="width:70%;height:100px;padding-left:5px;" class="recommendation_td">
 			                       		<ul style="padding-top:0px">
 				                       	   <li> 
 				                       	   		<img name = "icon_img" src={{sign_name}} style="width:25px; height=25px; padding-top:2px">				    
-				                       	   		<a name = "recom_title" href= {{item["website"]}} style="padding-top:2px; vertical-align: text-bottom; font-size:medium">{{item["title"]}}</a> 
+				                       	   		<a name = "recom_title" target="_blank" href= {{item["website"]}} style="padding-top:2px; vertical-align: text-bottom; font-size:medium">{{item["title"]}}</a> 
 				                           </li>
 				                            
 				                           <li name = "recom_address"> {{item["address"]}} </li>
@@ -190,13 +193,13 @@
 						% elif (img_id >= 3):
 						<br>
 						<div style="width:33%;height:50%; float:left">
-							<a name = "slider_link" href={{item["website"]}} class="img_link">
+							<a name = "slider_link" target="_blank" href={{item["website"]}} class="img_link">
 								<img name = "slider_img" class="slider_img" style="width:100%;height:200px" src={{item["images"]}}></img>
 							</a>
 						</div>
 						% else :
 							<div style="width:33%;height:50%;float:left">
-								<a name = "slider_link" href={{item["website"]}} class="img_link">
+								<a name = "slider_link" target="_blank" href={{item["website"]}} class="img_link">
 									<img name = "slider_img" class="slider_img" style="width:100%;height:200px" src={{item["images"]}}></img>
 								</a>
 							</div>
@@ -215,5 +218,9 @@
 
 
 	</body>
+
+	<script type="text/javascript">
+
+	</script>
 	
 </html>

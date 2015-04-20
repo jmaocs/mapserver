@@ -4,7 +4,7 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 var marker;
 var lastMarkerBySearch = null;
 
-function init(poi, type)
+function init(poi, type, top_recom)
 {
 	var MapOption={
 			center:new google.maps.LatLng(41.1536111,-81.3580556),
@@ -55,7 +55,7 @@ function init(poi, type)
             id: "downtown",
             label: "Downtown",
             action: function(){
-              getChecked("downtown", poi);
+              getChecked("downtown", poi, top_recom);
             }                       
         }
         var check3 = new checkBox(checkOptions3);
@@ -66,7 +66,7 @@ function init(poi, type)
             id: "restaurants",
             label: "Restaurants",
             action: function(){
-              getChecked("restaurants", poi);
+              getChecked("restaurants", poi, top_recom);
             }                       
         }
         var check4 = new checkBox(checkOptions4);
@@ -77,7 +77,7 @@ function init(poi, type)
             id: "apartments",
             label: "Apartments",
             action: function(){
-				getChecked("apartments", poi);     
+				getChecked("apartments", poi, top_recom);     
 	       }                       
         }
         var check5 = new checkBox(checkOptions5);
@@ -88,7 +88,7 @@ function init(poi, type)
             id: "sports",
             label: "Sports",
             action: function(){
-              getChecked("sports", poi);
+              getChecked("sports", poi, top_recom);
             }                       
         }
         var check6 = new checkBox(checkOptions6);
@@ -99,7 +99,7 @@ function init(poi, type)
             id: "ksu",
             label: "KSU",
             action: function(){
-              getChecked("ksu", poi);
+              getChecked("ksu", poi, top_recom);
             }                       
         }
         var check7 = new checkBox(checkOptions7);
@@ -110,7 +110,7 @@ function init(poi, type)
             id: "hotels",
             label: "Hotels",
             action: function(){
-              getChecked("hotels", poi);
+              getChecked("hotels", poi, top_recom);
             }                       
         }
         var check8 = new checkBox(checkOptions8);
@@ -176,7 +176,7 @@ function init(poi, type)
 		    if (key === 13) { // 13 is enter
 		      	e.preventDefault();
 		      	if(document.getElementById("address").value != ""){
-		      		codeAdress();
+		      		searchTarget();
 		      	}
 		    }
 		});
@@ -185,22 +185,38 @@ function init(poi, type)
 		    if (key === 13) { // 13 is enter
 		      	e.preventDefault();
 		      	if(document.getElementById("source").value != "" || document.getElementById("destination").value != ""){
-		      		direction();
+		      		getDirection();
 		      	}
 		    }
 		});
-	if (type != null) {
+	if (type != null && type != "") {
 		setTimeout( function(){
-			console.log("ready to click");
-			document.getElementById(type).click();
-			document.getElementById('myddOptsDiv').style.display = 'none';
+			clickCheckBox(type);	
 		}, 100);
 	}
+	getDirectionFromRecom();
 }
 
-function codeAdress(){
+function getDirectionFromRecom () {
+	d3.selectAll("#direct_recom").on("click",function(d,i){
+		var adr = d3.select(this).attr("value");
+		console.log(adr);
+		expandTwoSearchBox(adr);
+		// document.getElementById("destination").placeholder = adr;
+		// document.getElementById("destination").value = adr;
+	})
+}
+
+function clickCheckBox (type) {
+	document.getElementById(type).click();
+	document.getElementById('myddOptsDiv').style.display = 'none';
+}
+
+function searchTarget(){
+	removeAllMarkers(); 
 	var geocoder = new google.maps.Geocoder();
     var address = document.getElementById("address").value;
+    var service = new google.maps.places.PlacesService(map);
     geocoder.geocode({ 'address': address }, function (results, status) {
 	    if (status == google.maps.GeocoderStatus.OK) {
 	        var latitude = results[0].geometry.location.lat();
@@ -208,13 +224,21 @@ function codeAdress(){
 			var MarkerOption=
 			{
 				position:new google.maps.LatLng(latitude,longitude),
-	            animation: google.maps.Animation.DROP
+	            animation: google.maps.Animation.DROP,
+	            draggable:true
 			};
 			marker = new google.maps.Marker(MarkerOption);
 			marker.setMap(map);
 	        map.setCenter({lat: latitude, lng: longitude});
+
 			//Add Information Window
-			var InfoOption={content:"Here is Kent State University"}
+			var content = '<div id="content" style="width:200px">'+
+		       results[0].formatted_address + ' <br>  Type: ' + 
+				results[0].types[0] + ' <br> ' + latitude + ', ' + longitude + 
+		    '</div>';
+			// var content = results[0].formatted_address + ' <br>  Type: ' + 
+			// 	results[0].types[0] + ' <br> ' + latitude + ', ' + longitude;
+			var InfoOption={content:content}
 			var infoWindow=new google.maps.InfoWindow(InfoOption);
 			google.maps.event.addListener(marker,'click',function(e){
 				infoWindow.open(map, marker);
@@ -228,7 +252,8 @@ function codeAdress(){
 	    }
     });	
 }
-function direction() {
+function getDirection() {
+	removeAllMarkers(); 
     document.getElementById("route-results").innerHTML = "";
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById('route-results'));
@@ -243,28 +268,49 @@ function direction() {
 		if (status == google.maps.DirectionsStatus.OK) {
   	  		directionsDisplay.setDirections(result);
 		}
-	});	  
+	});	 
+	
 }
-function myFunction1() {
+function expandTwoSearchBox() {
 	 document.getElementById('D1').style.display = "none";
 	 document.getElementById('D2').style.display = "block";
 	 document.getElementById("myform2").reset();
 	 //document.getElementById("address1").focus();
+	 if (document.getElementById('address').value != "") {
+	 	document.getElementById('source').value = document.getElementById('address').value;
+	 }
 	 document.getElementById("route-results").innerHTML = "";
-	 clean();
+	 removeSearchedDisplay();
 }
-function myFunction2() {
+function expandTwoSearchBox(dest) {
+	 document.getElementById('D1').style.display = "none";
+	 document.getElementById('D2').style.display = "block";
+	 document.getElementById("myform2").reset();
+	 //document.getElementById("address1").focus();
+	 if (document.getElementById('address').value != "") {
+	 	document.getElementById('source').value = document.getElementById('address').value;
+	 }
+	 if (dest != "" && dest != undefined) {
+	 	document.getElementById('destination').value = dest;
+	 }
+	 document.getElementById("route-results").innerHTML = "";
+	 removeSearchedDisplay();
+}
+
+function shrinkTwoSearchBox() {
 	 document.getElementById('D2').style.display = "none";
 	 document.getElementById('D1').style.display = "block";
 	 document.getElementById("myform1").reset();
 	 //document.getElementById("address").focus();
-	 clean();
+	 removeSearchedDisplay();
 }
 
-function clean(){
+function removeSearchedDisplay(){
+	if (lastMarkerBySearch != null) {
+		lastMarkerBySearch.setMap(null);
+	}
 	directionsDisplay.setMap(null);
 	directionsDisplay.setPanel(null);
-	marker.setMap(null);
 }
 
 function toggleTraffic(){

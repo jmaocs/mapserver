@@ -16,13 +16,14 @@ def index():
 @route('/map', method='GET')
 def map():
 	tmp = json.dumps(poi)
-	return template(root_url + 'map.tpl', topic = top_recom, poi = tmp, topic_type = None)
+	top_recom_tmp = json.dumps(top_recom)
+	return template(root_url + 'map.tpl', topic = top_recom, poi = tmp, topic_type = None, top_recom = top_recom_tmp)
 
 @route('/map/:topic', method='GET')
 def map_topic(topic):
 	tmp = json.dumps(poi)
-	print(topic)
-	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, topic_type = topic)
+	top_recom_tmp = json.dumps(top_recom)
+	return template(root_url + 'map.tpl', topic = poi[topic], poi = tmp, topic_type = topic, top_recom = top_recom_tmp)
 
 
 @route('/aboutus', method='GET')
@@ -41,5 +42,5 @@ def test():
 
 debug(True)
 #application = default_app()   # run on pythonanywhere
-run(reloader=True,host='localhost', port=9999) 		# run local
+run(reloader=True,host='localhost', port=8080) 		# run local
 
