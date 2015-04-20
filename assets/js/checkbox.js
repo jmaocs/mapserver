@@ -1,6 +1,7 @@
 var selected_poi = {};
 var markersOnMap = {};
 var checkedBox_count = 0;
+var eventMarker = null;
 
 Object.size = function(obj) {
     var size = 0, key;
@@ -16,6 +17,11 @@ function getChecked(key, data, top_recom)
 	directionsDisplay.setMap(null);
 	directionsDisplay.setPanel(null);
 
+	if (eventMarker != null) {
+		eventMarker.setMap(null);
+		eventMarker = null;
+	}
+
 	if(key in selected_poi){
 		delete selected_poi[key];
 		removeMakersByKey(key);
@@ -25,7 +31,7 @@ function getChecked(key, data, top_recom)
 		checkedBox_count++;
 	}
 	updateMap();
-	if (checkedBox_count == 0 || checkedBox_count == 5) {
+	if (checkedBox_count == 0 || checkedBox_count == 6) {
 		showTopRecom(top_recom);
 		return;
 	}
@@ -48,7 +54,7 @@ function showTopRecom (top_recom) {
 		icon_img[count].src = icon;
 		recom_title[count].href = items.website;
 		recom_title[count].innerHTML = items.title;
-		recom_direction[count].value = items.address;
+		recom_direction[count].title = items.address;
 		recom_address[count].innerHTML = items.address;
 		recom_phone[count].innerHTML = items.phone;
 		slider_link[count].href = items.website;
@@ -57,6 +63,10 @@ function showTopRecom (top_recom) {
 	}
 }
 function removeAllMarkers() {
+	if (eventMarker != null) {
+		eventMarker.setMap(null);
+		eventMarker = null;
+	}
 	if (Object.size(markersOnMap) != 0) {
 		var lastKey = null;
 		for (var k in markersOnMap) {
@@ -66,7 +76,7 @@ function removeAllMarkers() {
 			}
 		}
 	}
-	console.log("All markers removed from map");
+	// console.log("All markers removed from map");
 }
 function removeMakersByKey(key) {
 	for (var k in markersOnMap) {
@@ -77,12 +87,16 @@ function removeMakersByKey(key) {
 			delete markersOnMap[key];
 		}
 	}
-	console.log("Makers with key: " + key + " removed from map");
+	if (eventMarker != null) {
+		eventMarker.setMap(null);
+		eventMarker = null;
+	}
+	// console.log("Makers with key: " + key + " removed from map");
 }
 
 function updateMap () {
 	// body...
-	console.log(selected_poi);
+	// console.log(selected_poi);
 	var markers = [];
 	var infoWindows = [];
 	for (var key in selected_poi) {
@@ -101,7 +115,6 @@ function updateMap () {
       		  '<div style="width:100%; font-color:black">' + items[sub_key].phone + 
       		  '<br><a id = "direct_link" name ="' + address + '" href="javascript:void(0);">Direction To Here</a>' +
       		  '</div>' + 
-
 		    '</div>';
 		    
 		    var imgURL = "/signs/" + items[sub_key].type + ".png";
@@ -164,7 +177,7 @@ function updateMap () {
 function updateRecomTableAndSlider (top_recom) {
 	var size = Object.size(selected_poi);
 	if (size == 0) {
-		console.log("Nothing to update");
+		// console.log("Nothing to update");
 	} else if (size == 6) {
 		showTopRecom(top_recom);
 		return;
@@ -242,7 +255,7 @@ function getItemsToUpdate(top_recom) {
 				var items = selected_poi[key];
 				var tmp = {};
 				for (var sub_key in items) {
-					if (step < 1 && count == 2 || (step >= 1 && count == 1)) {	// 2 + 1 + 1 + 1 + 1 + 1
+					if (step < 1 && count == 2 || (step >= 1 && count == 1)) {	// 2 + 1 + 1 + 1 + 1
 						break;
 					}
 					tmp[sub_key] = items[sub_key];
@@ -254,20 +267,6 @@ function getItemsToUpdate(top_recom) {
 
 		} else {
 			showTopRecom(top_recom);
-			// for (var key in selected_poi) {
-			// 	var count = 0;
-			// 	var items = selected_poi[key];
-			// 	var tmp = {};
-			// 	for (var sub_key in items) {
-			// 		if (count == 1) {		// 1 * 6
-			// 			break;
-			// 		}
-			// 		tmp[sub_key] = items[sub_key];
-			// 		count++;
-			// 	}
-			// 	need_to_update[key] = tmp;
-			// }
-
 		}
 		return need_to_update;
 }
@@ -291,7 +290,7 @@ function updateRecomTableAndSliderHelper(need_to_update) {		// need_to_update: j
 				icon_img[count].src = icon;
 				recom_title[count].href = items[sub_key].website;
 				recom_title[count].innerHTML = items[sub_key].title;
-				recom_direction[count].value = items[sub_key].address;
+				recom_direction[count].title = items[sub_key].address;
 				recom_address[count].innerHTML = items[sub_key].address;
 				recom_phone[count].innerHTML = items[sub_key].phone;
 				slider_link[count].href = items[sub_key].website;
@@ -300,6 +299,60 @@ function updateRecomTableAndSliderHelper(need_to_update) {		// need_to_update: j
 
 			}
 	}
+}
+
+
+function addEventToMap(data, e) {
+	// remove previous search history
+	directionsDisplay.setMap(null);
+	directionsDisplay.setPanel(null);
+
+	var marker;
+	var infoWindow = new google.maps.InfoWindow();
+	var items = data.events;
+	var item = items[e];
+	var lat = item.latitude;
+	var lnt = item.longtitude;
+	var address = item.address;
+	var contentString=
+		'<div id="content" style="width:200px">'+
+	      '<h3 id="Heading1"><a target="_blank" href='+ item.website + '>'+item.title + '</a></h3>'+
+	      '<div id="bodyContent1">'+
+  		  '<div style="width:100%; font-color:black">' + item.time + 
+  		  '<br><a id = "direct_link" name ="' + address + '" href="javascript:void(0);">Direction To Here</a>' +
+  		  '</div>' + 
+	    '</div>';
+	var imgURL = "/signs/" + item.type + ".png";
+	var pinIcon = new google.maps.MarkerImage(
+	    imgURL,
+	    null, /* size is determined at runtime */
+	    null, /* origin is 0,0 */
+	    null, /* anchor is bottom center of the scaled image */
+	    new google.maps.Size(28, 28)
+	); 
+	var myLatLng = new google.maps.LatLng(lat, lnt);
+	var mapOptions=
+	{
+		map: map,
+		icon: pinIcon,
+		position: myLatLng,
+        //animation: google.maps.Animation.DROP,
+	};
+	marker = new google.maps.Marker(mapOptions);
+	// Allow each marker to have an info window   
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infoWindow.setContent(contentString);
+    	infoWindow.open(map,marker);
+    	d3.selectAll("#direct_link").on("click",function(d){
+				var adr = d3.select(this).attr("name");
+				expandTwoSearchBox();
+				document.getElementById("destination").value = adr;
+		})
+  	}); 
+    map.setCenter({lat: lat, lng: lnt});
+	map.setZoom(16);
+	eventMarker = marker;
 }
 
 

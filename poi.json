@@ -733,6 +733,7 @@
   "events" : {
     "dinner_tasting": {
       "title" : "Rum Tasting and Caribbean Dinner Tasting",
+      "type"  : "events",
       "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
       "address" : "Secret Cellar, 176 East Main Street, Kent, OH 44240",
       "phone" : "(330) 678-9463",
@@ -743,6 +744,7 @@
     },
     "beer_release": {
       "title" : "Its Raining Beer Release & Tasting",
+      "type"  : "events",
       "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
       "address" : "Secret Cellar, 176 East Main Street, Kent, OH 44240",
       "phone" : "(330) 678-9463",
@@ -753,10 +755,11 @@
     },
     "mama_festival": {
       "title" : "Who's Your Mama Festival",
+      "type"  : "events",
       "website" : "http://www.mainstreetkent.org/calendar-of-events/4556283983",
       "address" : "Main Street Kent OH 44240",
       "phone" : "unavailable",
-      "time": "",
+      "time": "April 25",
       "images" : "",
       "latitude" : 41.153692,
       "longtitude" : -81.339845

@@ -4,7 +4,7 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 var marker;
 var lastMarkerBySearch = null;
 
-function init(poi, type, top_recom)
+function init(poi, type, top_recom, events)
 {
 	var MapOption={
 			center:new google.maps.LatLng(41.1536111,-81.3580556),
@@ -189,17 +189,20 @@ function init(poi, type, top_recom)
 		      	}
 		    }
 		});
+	if (events != "") {
+		addEventToMap(poi,events);
+	}
 	if (type != null && type != "") {
 		setTimeout( function(){
 			clickCheckBox(type);	
-		}, 100);
+		}, 200);
 	}
 	getDirectionFromRecom();
 }
 
 function getDirectionFromRecom () {
 	d3.selectAll("#direct_recom").on("click",function(d,i){
-		var adr = d3.select(this).attr("value");
+		var adr = d3.select(this).attr("title");
 		console.log(adr);
 		expandTwoSearchBox(adr);
 		// document.getElementById("destination").placeholder = adr;

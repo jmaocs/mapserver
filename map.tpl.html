@@ -67,10 +67,10 @@
 	<script type="text/javascript">
 		var poi = {{!poi}};		// set global variable
 		var top_recom = {{!top_recom}}
+		var events = "{{!events}}";
 	    var type = "{{!topic_type}}";
-		//var type = "downtown";
 	</script>
-	<body class="right-sidebar" onload="init(poi, type, top_recom)" >
+	<body class="right-sidebar" onload="init(poi, type, top_recom, events)" >
 
 		<!-- Header -->
 			<div id="header-wrapper" style="height:100%">
@@ -158,7 +158,7 @@
 							 <tr class="recommendation_tr" style="height:100px">
 			                       <td style="width:25%;height:100px" class="recommendation_td">
 			                           <img name="recom_img" src={{left_img}} class="recommendation_img" style="width:100%;height:80px;" ></img>
-			                           <a name="recom_direction" id ="direct_recom" href="#" value = '{{item["address"]}}'> Direction To</a>
+			                           <a name="recom_direction" id ="direct_recom" href="#" title = '{{item["address"]}}'> Direction To</a>
 			                       </td>
 			                       <td style="width:70%;height:100px;padding-left:5px;" class="recommendation_td">
 			                       		<ul style="padding-top:0px">
