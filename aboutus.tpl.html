@@ -96,7 +96,7 @@
 					</header>
 					<div class="row">
 						<section class="6u 12u(narrower)">
-							<form method="post" action="#">
+							<form method="post" action="mailto:ywu23@kent.edu" id="email-form">
 								<div class="row 50%">
 									<div class="6u 12u(mobile)">
 										<input name="name" placeholder="Name" type="text" />
@@ -124,13 +124,13 @@
 						<section class="6u 12u(narrower)" style="padding-left:70px">
 							<div class="row 0%">
 								<ul class="divided icons 6u 12u(mobile)">
-									<li ><img src="/twitter.png" style="width:50px;height:50px;"><a href="https://twitter.com">Twitter</a></li>
-									<li ><img src="/facebook.png" style="width:50px;height:50px;"><a href="https://www.facebook.com">Facebook</a></li>
+									<li ><img src="/twitter.png" style="width:50px;height:50px;"><a href="https://twitter.com/share?url=http://jmao.pythonanywhere.com/" target="_blank">Twitter</a></li>
+									<li ><img src="/facebook.png" style="width:50px;height:50px;"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jmao.pythonanywhere.com/">Facebook</a></li>
 									
 								</ul>
 								<ul class="divided icons 6u 12u(mobile)">
-									<li ><img src="/linkedin.png" style="width:50px;height:50px;"><a href="https://www.linkedin.com">LinkedIn</a></li>
-									<li ><img src="/weibo.png" style="width:50px;height:50px;"><a href="http://www.weibo.com">Weibo</a></li>
+									<li ><img src="/linkedin.png" style="width:50px;height:50px;"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://jmao.pythonanywhere.com/" target="_blank">LinkedIn</a></li>
+									<li ><img src="/weibo.png" style="width:50px;height:50px;"><a href="http://service.weibo.com/share/share.php?url=http://jmao.pythonanywhere.com/" target="_blank">Weibo</a></li>
 									
 								</ul>
 							</div>
@@ -146,6 +146,8 @@
 
 	</body>
 	<script>
+	window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
 	function sendMessage()
 	{
 		var email = document.getElementById("email").value;
@@ -153,6 +155,7 @@
 			document.getElementById("send").innerHTML = "Email is invalid!";
 		}else{
 			document.getElementById("send").innerHTML = "Message Sent! Thank you!";
+			document.getElementById("email-form").submit();
 		}
 		
 	}
