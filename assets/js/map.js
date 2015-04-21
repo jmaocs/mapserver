@@ -189,7 +189,7 @@ function init(poi, type, top_recom, events)
 		      	}
 		    }
 		});
-	if (events != "") {
+	if (events != "" && events != null && events != undefined && events != "None") {
 		addEventToMap(poi,events);
 	}
 	if (type != null && type != "") {
