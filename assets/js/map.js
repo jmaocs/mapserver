@@ -114,18 +114,47 @@ function init(poi, type, top_recom, events)
             }                       
         }
         var check8 = new checkBox(checkOptions8);
-        //set options
-        // var divOptions = {
-        //     gmap: map,
-        //     name: 'Option1',
-        //     title: "This acts like a button or click event",
-        //     id: "mapOpt",
-        //     action: function(){
-        //       alert('option1');
-        //     }
-        // }
-        // var optionDiv1 = new optionDiv(divOptions);
-        
+        // //set options
+        //  var divOptions = {
+        //      gmap: map,
+        //      name: 'Walking',
+        //      title: "Walking",
+        //      id: "mode",
+        //      action: function(){
+               
+        //      }
+        //  }
+        //  var optionDiv1 = new optionDiv(divOptions);
+        // var divOptions2 = {
+        //      gmap: map,
+        //      name: 'Driving',
+        //      title: "Driving",
+        //      id: "mode",
+        //      action: function(){
+               
+        //      }
+        //  }
+        //  var optionDiv2 = new optionDiv(divOptions2);
+        //  var divOptions3 = {
+        //      gmap: map,
+        //      name: 'Bicycling',
+        //      title: "Bicycling",
+        //      id: "mode",
+        //      action: function(){
+               
+        //      }
+        //  }
+        //  var optionDiv3 = new optionDiv(divOptions3);
+        //  var divOptions4 = {
+        //      gmap: map,
+        //      name: 'Transit',
+        //      title: "Transit",
+        //      id: "mode",
+        //      action: function(){
+               
+        //      }
+        //  }
+        //  var optionDiv4 = new optionDiv(divOptions4);
         
         
         //create the input box items
@@ -151,8 +180,9 @@ function init(poi, type, top_recom, events)
         		dropDown: dropDownDiv 
         }
         
-        var dropDown1 = new dropDownControl(dropDownOptions);     
+        var dropDown1 = new dropDownControl(dropDownOptions);   
 
+        
 
 
         //
@@ -255,6 +285,11 @@ function searchTarget(){
 	    }
     });	
 }
+function changeTravelMode(type){
+	document.getElementById("travelmode").value = type;
+	getDirection();
+}
+
 function getDirection() {
 	removeAllMarkers(); 
     document.getElementById("route-results").innerHTML = "";
@@ -262,13 +297,15 @@ function getDirection() {
 	directionsDisplay.setPanel(document.getElementById('route-results'));
     var start = document.getElementById("source").value;
 	var end = document.getElementById("destination").value; 
+	var mode = document.getElementById("travelmode").value;
 	var request = {
 		origin:start,
 		destination:end,
-		travelMode: google.maps.TravelMode.DRIVING
+		travelMode: google.maps.TravelMode[mode]
 	};
 	directionsService.route(request, function(result, status) {
 		if (status == google.maps.DirectionsStatus.OK) {
+			console.log(result);
   	  		directionsDisplay.setDirections(result);
 		}
 	});	 

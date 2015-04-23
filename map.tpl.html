@@ -114,12 +114,20 @@
 						</br>
 						<img src="/scripts/A.png" style="width:20px;height:30px;padding-right:5px;float:left">
 						<input class="searchbox2" style="text-align: left;width:90%;height:50px;" id="destination" type="text" size="6" ></b>
-						</br>
+						</br>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img  id="BICYCLING" src="/signs/bicycle.ico" onclick='changeTravelMode("BICYCLING")' style="width:30px;height:30px;text-align:center"> &nbsp;
+						<img  id="DRIVING" src="/signs/car.ico" onclick='changeTravelMode("DRIVING")' style="width:30px;height:30px;text-align:center">
+						&nbsp;
+						<img  id="TRANSIT" src="/signs/bus.ico" onclick='changeTravelMode("TRANSIT")' style="width:30px;height:30px;text-align:center">
+						&nbsp;
+						<img  id="WALKING" src="/signs/walking.ico" onclick='changeTravelMode("WALKING")' style="width:30px;height:30px;text-align:center">
+						<input type="hidden" value="DRIVING" id="travelmode">
+					    <br>
 						&nbsp;&nbsp;&nbsp;
 						<a href="#" id="1" onclick="getDirection();" class="directionButton"/>Get Directions</a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="#" onclick="shrinkTwoSearchBox();" class="directionButton"/>Search</a>
 						</br>
-						<div id="route-results" style="overflow-y: scroll;height:295px;text-align:left;"></div>
+						<div id="route-results" style="overflow-y: scroll;height:270px;text-align:left;"></div>
 						</form>
 			</div>
 		</div>
